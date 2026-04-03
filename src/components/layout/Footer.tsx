@@ -1,9 +1,9 @@
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { photographerInfo } from '@/data/photographer';
+import { COLORS } from '@/constants/colors';
 
-// ── Paleta institucional ─────────────────────────────────────────
-const GOLD = '#C9A84C';
+// Importa a imagem do logotipo
+import logoSvg from '@/assets/logo.png';
 
 const navLinks = [
   { name: 'Início',          path: '/'         },
@@ -25,63 +25,32 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#111110] text-[#FAFAF8]">
+    <footer style={{ backgroundColor: COLORS.navy, color: COLORS.white }}>
 
       {/* Linha dourada no topo */}
-      <div className="h-[1.5px] w-full" style={{ background: GOLD }} />
+      <div className="h-[1.5px] w-full" style={{ background: COLORS.gold }} />
 
-      {/* ── Corpo principal ───────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
 
-          {/* Coluna 1 — Identidade da Firma */}
-          <div className="space-y-5 lg:col-span-1">
-            <div>
-              <p
-                className="font-light tracking-widest uppercase text-[#FAFAF8] mb-1"
-                style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem', letterSpacing: '0.14em' }}
-              >
-                {photographerInfo.name.toUpperCase()}
-              </p>
-              <p
-                className="text-[9px] tracking-[0.2em] uppercase"
-                style={{ color: GOLD, fontFamily: "'DM Mono', monospace" }}
-              >
-                Sociedade de Advogados
-              </p>
-            </div>
-            <p
-              className="text-sm font-light leading-relaxed"
-              style={{ color: 'rgba(255,255,255,0.45)', fontFamily: "'DM Sans', sans-serif", lineHeight: '1.8' }}
-            >
-              Assessoria jurídica especializada ao serviço das empresas e particulares em Angola, com rigor, ética e visão estratégica.
+          {/* Coluna 1 — Logo */}
+          <div className="space-y-4">
+            <img src={logoSvg} alt="OLC Advogados" className="h-16 w-auto" />
+            <p className="text-sm font-light leading-relaxed" style={{ color: `${COLORS.white}cc` }}>
+              Assessoria jurídica especializada ao serviço das empresas e particulares em Angola.
             </p>
-            {/* Registo OAA */}
-            <div
-              className="inline-flex items-center gap-2 text-[9px] tracking-[0.15em] uppercase px-3 py-1.5 border"
-              style={{ borderColor: 'rgba(201,168,76,0.25)', color: 'rgba(255,255,255,0.35)', fontFamily: "'DM Mono', monospace" }}
-            >
-              <span className="w-1 h-1 rounded-full" style={{ background: GOLD }} />
+            <div className="inline-flex items-center gap-2 text-[9px] tracking-[0.15em] uppercase px-3 py-1.5 border" style={{ borderColor: COLORS.gold, color: COLORS.gold }}>
+              <span className="w-1 h-1 rounded-full" style={{ background: COLORS.gold }} />
               Membro da Ordem dos Advogados de Angola
             </div>
           </div>
 
           {/* Coluna 2 — Navegação */}
-          <div className="space-y-5">
-            <p
-              className="text-[9px] tracking-[0.22em] uppercase"
-              style={{ color: GOLD, fontFamily: "'DM Mono', monospace" }}
-            >
-              Navegação
-            </p>
+          <div className="space-y-4">
+            <p className="text-[9px] tracking-[0.22em] uppercase" style={{ color: COLORS.gold }}>Navegação</p>
             <nav className="flex flex-col gap-3">
               {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className="text-sm font-light transition-colors duration-200 hover:text-[#C9A84C]"
-                  style={{ color: 'rgba(255,255,255,0.5)', fontFamily: "'DM Sans', sans-serif" }}
-                >
+                <Link key={link.path} to={link.path} className="text-sm font-light transition-colors hover:text-gold" style={{ color: `${COLORS.white}cc` }}>
                   {link.name}
                 </Link>
               ))}
@@ -89,21 +58,11 @@ export function Footer() {
           </div>
 
           {/* Coluna 3 — Áreas de Prática */}
-          <div className="space-y-5">
-            <p
-              className="text-[9px] tracking-[0.22em] uppercase"
-              style={{ color: GOLD, fontFamily: "'DM Mono', monospace" }}
-            >
-              Áreas de Prática
-            </p>
+          <div className="space-y-4">
+            <p className="text-[9px] tracking-[0.22em] uppercase" style={{ color: COLORS.gold }}>Áreas de Prática</p>
             <nav className="flex flex-col gap-3">
               {areasLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  className="text-sm font-light transition-colors duration-200 hover:text-[#C9A84C]"
-                  style={{ color: 'rgba(255,255,255,0.5)', fontFamily: "'DM Sans', sans-serif" }}
-                >
+                <Link key={link.name} to={link.path} className="text-sm font-light transition-colors hover:text-gold" style={{ color: `${COLORS.white}cc` }}>
                   {link.name}
                 </Link>
               ))}
@@ -111,36 +70,24 @@ export function Footer() {
           </div>
 
           {/* Coluna 4 — Contactos */}
-          <div className="space-y-5">
-            <p
-              className="text-[9px] tracking-[0.22em] uppercase"
-              style={{ color: GOLD, fontFamily: "'DM Mono', monospace" }}
-            >
-              Contactos
-            </p>
-            <div className="flex flex-col gap-4">
-              <a
-                href={`mailto:${photographerInfo.email}`}
-                className="flex items-start gap-3 text-sm font-light transition-colors duration-200 hover:text-[#C9A84C] group"
-                style={{ color: 'rgba(255,255,255,0.5)', fontFamily: "'DM Sans', sans-serif" }}
-              >
-                <Mail className="size-4 mt-0.5 shrink-0 group-hover:text-[#C9A84C] transition-colors" style={{ color: GOLD }} />
-                {photographerInfo.email}
+          <div className="space-y-4">
+            <p className="text-[9px] tracking-[0.22em] uppercase" style={{ color: COLORS.gold }}>Contactos</p>
+            <div className="flex flex-col gap-3">
+              <a href="mailto:geral@olcadvogados.ao" className="flex items-center gap-3 text-sm" style={{ color: `${COLORS.white}cc` }}>
+                <Mail className="size-4" style={{ color: COLORS.gold }} />
+                geral@olcadvogados.ao
               </a>
-              <a
-                href="tel:+244900000000"
-                className="flex items-start gap-3 text-sm font-light transition-colors duration-200 hover:text-[#C9A84C] group"
-                style={{ color: 'rgba(255,255,255,0.5)', fontFamily: "'DM Sans', sans-serif" }}
-              >
-                <Phone className="size-4 mt-0.5 shrink-0" style={{ color: GOLD }} />
-                +244 900 000 000
+              <a href="tel:+244923481427" className="flex items-center gap-3 text-sm" style={{ color: `${COLORS.white}cc` }}>
+                <Phone className="size-4" style={{ color: COLORS.gold }} />
+                +244 923 481 427
               </a>
-              <span
-                className="flex items-start gap-3 text-sm font-light"
-                style={{ color: 'rgba(255,255,255,0.5)', fontFamily: "'DM Sans', sans-serif" }}
-              >
-                <MapPin className="size-4 mt-0.5 shrink-0" style={{ color: GOLD }} />
-                {photographerInfo.location}
+              <a href="tel:+244958087582" className="flex items-center gap-3 text-sm" style={{ color: `${COLORS.white}cc` }}>
+                <Phone className="size-4" style={{ color: COLORS.gold }} />
+                +244 958 087 582
+              </a>
+              <span className="flex items-center gap-3 text-sm" style={{ color: `${COLORS.white}cc` }}>
+                <MapPin className="size-4" style={{ color: COLORS.gold }} />
+                Luanda, Angola
               </span>
             </div>
           </div>
@@ -148,23 +95,14 @@ export function Footer() {
         </div>
       </div>
 
-      {/* ── Rodapé inferior — copyright e legal ──────────────────── */}
-      <div
-        className="border-t max-w-7xl mx-auto px-6 lg:px-8 py-6"
-        style={{ borderColor: 'rgba(255,255,255,0.06)' }}
-      >
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p
-            className="text-xs font-light"
-            style={{ color: 'rgba(255,255,255,0.3)', fontFamily: "'DM Sans', sans-serif" }}
-          >
-            © {currentYear} {photographerInfo.name}. Todos os direitos reservados. Luanda, Angola.
+      {/* Copyright */}
+      <div className="border-t py-6 px-6 lg:px-8" style={{ borderColor: `${COLORS.gold}30` }}>
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-xs" style={{ color: `${COLORS.white}80` }}>
+            © {currentYear} OLC Advogados. Todos os direitos reservados.
           </p>
-          <p
-            className="text-[9px] tracking-[0.15em] uppercase"
-            style={{ color: 'rgba(255,255,255,0.2)', fontFamily: "'DM Mono', monospace" }}
-          >
-            Constituída nos termos da Lei n.º 11/15 · E.A. n.º 22/20
+          <p className="text-[9px] tracking-[0.15em] uppercase" style={{ color: `${COLORS.white}50` }}>
+            Lei n.º 11/15 · E.A. n.º 22/20
           </p>
         </div>
       </div>

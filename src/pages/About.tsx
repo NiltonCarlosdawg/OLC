@@ -3,11 +3,10 @@ import { photographerInfo } from '@/data/photographer';
 import { Separator } from '@/components/ui/separator';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { Reveal, StaggerReveal } from '@/components/ui/animations';
+import { Logo } from '@/components/ui/Logo';
+import { COLORS } from '@/constants/colors';
 
-// ── Paleta institucional ─────────────────────────────────────────
-const GOLD = '#C9A84C';
-
-// ── Equipa da firma ──────────────────────────────────────────────
+// Equipa da firma
 const TEAM = [
   {
     initials: 'AC',
@@ -50,25 +49,25 @@ export default function About() {
   return (
     <>
       <SEOHead
-        title="A Firma"
+        title="A Firma | OLO Advogados"
         description={`${photographerInfo.name} — Sociedade de Advogados em Luanda, Angola. ${photographerInfo.tagline}`}
       />
 
       {/* Linha dourada no topo */}
-      <div className="fixed top-0 inset-x-0 z-50 h-[1.5px]" style={{ background: GOLD }} />
+      <div className="fixed top-0 inset-x-0 z-50 h-[1.5px]" style={{ background: COLORS.gold }} />
 
-      <div className="min-h-screen bg-[#FAFAF8] dark:bg-[#111110]">
+      <div className="min-h-screen" style={{ background: COLORS.lightBg }}>
 
-        {/* ── Hero ─────────────────────────────────────────────────── */}
-        <section className="relative py-24 md:py-40 px-6 lg:px-8 overflow-hidden bg-[#111110]">
+        {/* Hero */}
+        <section className="relative py-24 md:py-40 px-6 lg:px-8 overflow-hidden" style={{ background: COLORS.navy }}>
 
           <div
             className="absolute top-0 right-0 w-[45vw] h-[45vw] pointer-events-none"
-            style={{ background: `radial-gradient(ellipse at top right, ${GOLD}10 0%, transparent 65%)` }}
+            style={{ background: COLORS.goldGlow }}
           />
           <div
             className="absolute left-[9vw] top-[8%] bottom-[10%] w-px pointer-events-none hidden lg:block"
-            style={{ background: `linear-gradient(to bottom, transparent, ${GOLD}25, transparent)` }}
+            style={{ background: `linear-gradient(to bottom, transparent, ${COLORS.gold}25, transparent)` }}
           />
           <div
             className="absolute right-0 bottom-0 text-[20vw] font-light leading-none select-none pointer-events-none hidden xl:block"
@@ -79,21 +78,23 @@ export default function About() {
 
           <div className="relative max-w-4xl mx-auto text-center space-y-6" style={{ zIndex: 2 }}>
             <Reveal type="blur">
+              <Logo variant="full" showTagline />
+              <div className="h-6" />
               <p
                 className="font-mono text-[10px] tracking-[0.22em] uppercase mb-4"
-                style={{ color: GOLD, fontFamily: "'DM Mono', monospace" }}
+                style={{ color: COLORS.gold, fontFamily: "'DM Mono', monospace" }}
               >
                 Missão · Valores · Equipa
               </p>
               <h1
-                className="font-light tracking-wide mb-4 text-[#FAFAF8]"
-                style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(3rem, 7vw, 6rem)' }}
+                className="font-light tracking-wide mb-4"
+                style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(3rem, 7vw, 6rem)', color: COLORS.textLight }}
               >
                 A Firma
               </h1>
               <p
                 className="text-lg md:text-xl font-light tracking-wide"
-                style={{ color: 'rgba(255,255,255,0.5)', fontFamily: "'DM Sans', sans-serif" }}
+                style={{ color: COLORS.textMutedLight, fontFamily: "'DM Sans', sans-serif" }}
               >
                 Sociedade de Advogados · Luanda · Angola
               </p>
@@ -101,15 +102,15 @@ export default function About() {
           </div>
         </section>
 
-        {/* ── Apresentação e Contactos ─────────────────────────────── */}
-        <section className="py-16 md:py-24 px-6 lg:px-8 border-t border-[#e8e8e6] dark:border-[#1e1e1c]">
+        {/* Apresentação e Contactos */}
+        <section className="py-16 md:py-24 px-6 lg:px-8" style={{ borderTop: `1px solid ${COLORS.border}` }}>
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
 
               {/* Esquerda — imagem do escritório */}
               <Reveal type="fadeLeft">
                 <div className="space-y-6">
-                  <div className="aspect-[3/4] relative overflow-hidden bg-[#e8e8e6] dark:bg-[#1e1e1c]">
+                  <div className="aspect-[3/4] relative overflow-hidden" style={{ background: COLORS.border }}>
                     <img
                       src="https://images.unsplash.com/photo-1497366216548-37526070297c?crop=entropy&cs=tinysrgb&fit=crop&h=800&w=600"
                       alt="Escritório da Sociedade de Advogados"
@@ -117,34 +118,34 @@ export default function About() {
                     />
                     <div
                       className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-500"
-                      style={{ background: `linear-gradient(to top, ${GOLD}18, transparent)` }}
+                      style={{ background: `linear-gradient(to top, ${COLORS.gold}18, transparent)` }}
                     />
                   </div>
 
                   {/* Contactos rápidos */}
                   <div className="flex flex-col gap-3">
                     <a
-                      href="mailto:geral@sociedade.ao"
-                      className="inline-flex items-center gap-3 text-sm font-light text-[#777] hover:text-[#111110] dark:hover:text-[#FAFAF8] transition-colors"
-                      style={{ fontFamily: "'DM Sans', sans-serif" }}
+                      href="mailto:geral@oloadvogados.ao"
+                      className="inline-flex items-center gap-3 text-sm font-light transition-colors"
+                      style={{ color: COLORS.textMuted, fontFamily: "'DM Sans', sans-serif" }}
                     >
-                      <Mail className="size-4 shrink-0" style={{ color: GOLD }} />
-                      geral@sociedade.ao
+                      <Mail className="size-4 shrink-0" style={{ color: COLORS.gold }} />
+                      geral@olcadvogados.ao
                     </a>
                     <a
-                      href="tel:+244900000000"
-                      className="inline-flex items-center gap-3 text-sm font-light text-[#777] hover:text-[#111110] dark:hover:text-[#FAFAF8] transition-colors"
-                      style={{ fontFamily: "'DM Sans', sans-serif" }}
+                      href="tel:+244923481472"
+                      className="inline-flex items-center gap-3 text-sm font-light transition-colors"
+                      style={{ color: COLORS.textMuted, fontFamily: "'DM Sans', sans-serif" }}
                     >
-                      <Phone className="size-4 shrink-0" style={{ color: GOLD }} />
-                      +244 900 000 000
+                      <Phone className="size-4 shrink-0" style={{ color: COLORS.gold }} />
+                      +244 923 481 472
                     </a>
                     <span
-                      className="inline-flex items-center gap-3 text-sm font-light text-[#777]"
-                      style={{ fontFamily: "'DM Sans', sans-serif" }}
+                      className="inline-flex items-center gap-3 text-sm font-light"
+                      style={{ color: COLORS.textMuted, fontFamily: "'DM Sans', sans-serif" }}
                     >
-                      <MapPin className="size-4 shrink-0" style={{ color: GOLD }} />
-                      {photographerInfo.location}
+                      <MapPin className="size-4 shrink-0" style={{ color: COLORS.gold }} />
+                      Luanda, Angola
                     </span>
                   </div>
                 </div>
@@ -155,20 +156,20 @@ export default function About() {
                 <div className="space-y-8">
                   <div className="space-y-3">
                     <h2
-                      className="font-light tracking-wide text-[#111110] dark:text-[#FAFAF8]"
-                      style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)' }}
+                      className="font-light tracking-wide"
+                      style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)', color: COLORS.textDark }}
                     >
                       {photographerInfo.name}
                     </h2>
                     <p
-                      className="text-xl font-light tracking-wide text-[#777]"
-                      style={{ fontFamily: "'DM Sans', sans-serif" }}
+                      className="text-xl font-light tracking-wide"
+                      style={{ color: COLORS.textMuted, fontFamily: "'DM Sans', sans-serif" }}
                     >
                       {photographerInfo.tagline}
                     </p>
                     <span
                       className="inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase px-3 py-1.5"
-                      style={{ background: '#111110', color: '#FAFAF8', fontFamily: "'DM Mono', monospace" }}
+                      style={{ background: COLORS.navy, color: COLORS.textLight, fontFamily: "'DM Mono', monospace" }}
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
                       {photographerInfo.availability}
@@ -182,8 +183,8 @@ export default function About() {
                     {photographerInfo.biography.split('\n\n').map((paragraph, index) => (
                       <p
                         key={index}
-                        className="font-light leading-relaxed text-[#777]"
-                        style={{ fontFamily: "'DM Sans', sans-serif", lineHeight: '1.85', fontSize: '15px' }}
+                        className="font-light leading-relaxed"
+                        style={{ fontFamily: "'DM Sans', sans-serif", lineHeight: '1.85', fontSize: '15px', color: COLORS.textMuted }}
                       >
                         {paragraph}
                       </p>
@@ -196,7 +197,7 @@ export default function About() {
                       <span className="text-[10px] tracking-[0.15em] uppercase mr-3" style={{ color: '#bbb', fontFamily: "'DM Mono', monospace" }}>
                         Registo
                       </span>
-                      <span className="text-[#111110] dark:text-[#FAFAF8]">
+                      <span style={{ color: COLORS.textDark }}>
                         Ordem dos Advogados de Angola · Lei n.º 11/15
                       </span>
                     </div>
@@ -204,8 +205,8 @@ export default function About() {
                       <span className="text-[10px] tracking-[0.15em] uppercase mr-3" style={{ color: '#bbb', fontFamily: "'DM Mono', monospace" }}>
                         Sede
                       </span>
-                      <span className="text-[#111110] dark:text-[#FAFAF8]">
-                        {photographerInfo.location}
+                      <span style={{ color: COLORS.textDark }}>
+                        Luanda, Angola
                       </span>
                     </div>
                   </div>
@@ -215,16 +216,16 @@ export default function About() {
           </div>
         </section>
 
-        {/* ── Equipa ───────────────────────────────────────────────── */}
-        <section className="py-16 md:py-24 px-6 lg:px-8 border-t border-[#e8e8e6] dark:border-[#1e1e1c]">
+        {/* Equipa */}
+        <section className="py-16 md:py-24 px-6 lg:px-8" style={{ borderTop: `1px solid ${COLORS.border}` }}>
           <div className="max-w-4xl mx-auto">
             <Reveal type="fadeUp">
-              <p className="font-mono text-[10px] tracking-[0.2em] uppercase mb-3" style={{ color: GOLD, fontFamily: "'DM Mono', monospace" }}>
+              <p className="font-mono text-[10px] tracking-[0.2em] uppercase mb-3" style={{ color: COLORS.gold, fontFamily: "'DM Mono', monospace" }}>
                 Os nossos advogados
               </p>
               <h2
-                className="font-light tracking-wide text-[#111110] dark:text-[#FAFAF8] mb-12"
-                style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)' }}
+                className="font-light tracking-wide mb-12"
+                style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)', color: COLORS.textDark }}
               >
                 A Equipa
               </h2>
@@ -232,19 +233,19 @@ export default function About() {
 
             <StaggerReveal type="fadeUp" staggerDelay={0.12} className="space-y-10">
               {TEAM.map((member) => (
-                <div key={member.name} className="border-b border-[#e8e8e6] dark:border-[#1e1e1c] pb-10 last:border-b-0">
+                <div key={member.name} className="border-b pb-10 last:border-b-0" style={{ borderColor: COLORS.border }}>
                   <div className="flex justify-between items-start gap-4 mb-1 flex-wrap">
                     <div className="flex items-center gap-4">
                       <div
                         className="w-10 h-10 flex items-center justify-center text-sm font-light shrink-0"
-                        style={{ background: '#111110', color: GOLD, fontFamily: "'Cormorant Garamond', serif", letterSpacing: '0.05em' }}
+                        style={{ background: COLORS.navy, color: COLORS.gold, fontFamily: "'Cormorant Garamond', serif", letterSpacing: '0.05em' }}
                       >
                         {member.initials}
                       </div>
                       <div>
                         <h3
-                          className="text-xl font-light tracking-wide text-[#111110] dark:text-[#FAFAF8]"
-                          style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                          className="text-xl font-light tracking-wide"
+                          style={{ fontFamily: "'Cormorant Garamond', serif", color: COLORS.textDark }}
                         >
                           {member.name}
                         </h3>
@@ -265,7 +266,7 @@ export default function About() {
                   </div>
                   <p
                     className="text-sm font-light italic ml-14"
-                    style={{ color: GOLD, fontFamily: "'DM Sans', sans-serif" }}
+                    style={{ color: COLORS.gold, fontFamily: "'DM Sans', sans-serif" }}
                   >
                     {member.area}
                   </p>
@@ -275,16 +276,16 @@ export default function About() {
           </div>
         </section>
 
-        {/* ── Competências Jurídicas ───────────────────────────────── */}
-        <section className="py-16 md:py-24 px-6 lg:px-8 border-t border-[#e8e8e6] dark:border-[#1e1e1c]">
+        {/* Competências Jurídicas */}
+        <section className="py-16 md:py-24 px-6 lg:px-8" style={{ borderTop: `1px solid ${COLORS.border}` }}>
           <div className="max-w-4xl mx-auto">
             <Reveal type="fadeUp">
-              <p className="font-mono text-[10px] tracking-[0.2em] uppercase mb-3" style={{ color: GOLD, fontFamily: "'DM Mono', monospace" }}>
+              <p className="font-mono text-[10px] tracking-[0.2em] uppercase mb-3" style={{ color: COLORS.gold, fontFamily: "'DM Mono', monospace" }}>
                 As nossas especialidades
               </p>
               <h2
-                className="font-light tracking-wide text-[#111110] dark:text-[#FAFAF8] mb-12"
-                style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)' }}
+                className="font-light tracking-wide mb-12"
+                style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)', color: COLORS.textDark }}
               >
                 Competências Jurídicas
               </h2>
@@ -300,8 +301,13 @@ export default function About() {
                     {group.skills.map((skill) => (
                       <span
                         key={skill}
-                        className="font-mono text-sm border border-[#e8e8e6] dark:border-[#1e1e1c] px-3 py-1.5 text-[#111110] dark:text-[#FAFAF8] bg-[#FAFAF8] dark:bg-[#111110] transition-colors hover:border-[#C9A84C] hover:text-[#C9A84C]"
-                        style={{ fontFamily: "'DM Mono', monospace" }}
+                        className="font-mono text-sm border px-3 py-1.5 transition-colors"
+                        style={{ 
+                          borderColor: COLORS.border, 
+                          color: COLORS.textDark, 
+                          background: COLORS.lightBg,
+                          fontFamily: "'DM Mono', monospace"
+                        }}
                       >
                         {skill}
                       </span>
@@ -313,16 +319,16 @@ export default function About() {
           </div>
         </section>
 
-        {/* ── Conformidade Regulatória ─────────────────────────────── */}
-        <section className="py-16 md:py-24 px-6 lg:px-8 border-t border-[#e8e8e6] dark:border-[#1e1e1c] bg-[#111110]">
+        {/* Conformidade Regulatória */}
+        <section className="py-16 md:py-24 px-6 lg:px-8" style={{ background: COLORS.navy, borderTop: `1px solid rgba(255,255,255,0.06)` }}>
           <div className="max-w-4xl mx-auto">
             <Reveal type="fadeUp">
-              <p className="font-mono text-[10px] tracking-[0.2em] uppercase mb-3" style={{ color: `${GOLD}80`, fontFamily: "'DM Mono', monospace" }}>
+              <p className="font-mono text-[10px] tracking-[0.2em] uppercase mb-3" style={{ color: `${COLORS.gold}80`, fontFamily: "'DM Mono', monospace" }}>
                 Enquadramento legal
               </p>
               <h2
-                className="font-light tracking-wide text-[#FAFAF8] mb-12"
-                style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)' }}
+                className="font-light tracking-wide mb-12"
+                style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)', color: COLORS.textLight }}
               >
                 Conformidade Regulatória
               </h2>
@@ -342,17 +348,17 @@ export default function About() {
                 >
                   <span
                     className="font-mono text-[10px] tracking-[0.15em] uppercase shrink-0 w-32"
-                    style={{ color: GOLD, fontFamily: "'DM Mono', monospace" }}
+                    style={{ color: COLORS.gold, fontFamily: "'DM Mono', monospace" }}
                   >
                     {item.code}
                   </span>
                   <div>
-                    <p className="font-light text-[#FAFAF8] mb-1" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem' }}>
+                    <p className="font-light mb-1" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem', color: COLORS.textLight }}>
                       {item.title}
                     </p>
                     <p
                       className="text-sm font-light"
-                      style={{ color: 'rgba(255,255,255,0.35)', fontFamily: "'DM Sans', sans-serif", lineHeight: '1.75' }}
+                      style={{ color: COLORS.textMutedLight, fontFamily: "'DM Sans', sans-serif", lineHeight: '1.75' }}
                     >
                       {item.body}
                     </p>

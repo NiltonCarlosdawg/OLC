@@ -5,14 +5,11 @@ import { Reveal, TextReveal } from '@/components/ui/animations';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { ArrowRight, ArrowUpRight, Scale, ShieldCheck, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-// ── Paleta institucional ─────────────────────────────────────────
-const GOLD = '#C9A84C';
-const NAVY = '#0A0F1E';
+import { COLORS } from '@/constants/colors';
 
 // ── Conteúdo institucional ───────────────────────────────────────
-const FIRMA_NOME     = 'Sociedade';
-const FIRMA_APELLIDO = 'de Advogados';
+const FIRMA_NOME     = 'OLC';
+const FIRMA_APELLIDO = 'Advogados';
 const FIRMA_TAGLINE  = 'Excelência jurídica ao serviço do seu negócio em Angola.';
 const FIRMA_DESC     =
   'Assessoria jurídica especializada em Direito Empresarial e Propriedade Intelectual, ' +
@@ -50,55 +47,29 @@ export default function Home() {
   return (
     <>
       <SEOHead
-        title="Sociedade de Advogados — Luanda, Angola"
+        title="OLC Advogados — Sociedade de Advogados, RL | Luanda, Angola"
         description={FIRMA_DESC}
       />
 
-      {/* ── Linha dourada no topo ─────────────────────────────────── */}
-      <div className="fixed top-0 inset-x-0 z-50 h-[1.5px]" style={{ background: GOLD }} />
+      {/* Linha dourada no topo */}
+      <div className="fixed top-0 inset-x-0 z-50 h-[1.5px]" style={{ background: COLORS.gold }} />
 
-      <div className="min-h-screen bg-[#FAFAF8] dark:bg-[#111110]">
+      <div className="min-h-screen" style={{ background: COLORS.white }}>
 
-        {/* ── HERO ──────────────────────────────────────────────────── */}
-        <section className="relative h-screen w-full overflow-hidden">
-
-          {/* Vídeo / imagem de fundo */}
-          <div className="absolute inset-0" style={{ zIndex: 1 }}>
-            <video
-              autoPlay muted loop playsInline preload="metadata"
-              poster="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?crop=entropy&cs=tinysrgb&fit=crop&h=900&w=1600"
-              className="w-full h-full object-cover opacity-100"
-              onError={(e) => { e.currentTarget.style.opacity = '0'; }}
-            >
-              <source
-                src="https://videos.pexels.com/video-files/3063470/3063470-uhd_2560_1440_25fps.mp4"
-                type="video/mp4"
-              />
-            </video>
-          </div>
-
-          {/* Gradiente — suficiente para legibilidade do texto, sem esconder a imagem */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/60" style={{ zIndex: 2 }} />
+        {/* HERO - fundo NAVY */}
+        <section className="relative h-screen w-full overflow-hidden" style={{ background: COLORS.navy }}>
 
           {/* Glow dourado */}
           <div
             className="absolute top-0 right-0 w-[45vw] h-[45vw] pointer-events-none"
-            style={{ background: `radial-gradient(ellipse at top right, ${GOLD}12 0%, transparent 65%)`, zIndex: 2 }}
+            style={{ background: `radial-gradient(ellipse at top right, ${COLORS.gold}12 0%, transparent 65%)`, zIndex: 1 }}
           />
 
           {/* Linha editorial vertical */}
           <div
             className="absolute left-[9vw] top-[8%] bottom-[10%] w-px pointer-events-none hidden lg:block"
-            style={{ background: `linear-gradient(to bottom, transparent, ${GOLD}30, transparent)`, zIndex: 3 }}
+            style={{ background: `linear-gradient(to bottom, transparent, ${COLORS.gold}30, transparent)`, zIndex: 2 }}
           />
-
-          {/* Watermark */}
-          <div
-            className="absolute right-0 bottom-[6%] text-[22vw] font-light leading-none tracking-tight select-none pointer-events-none hidden xl:block"
-            style={{ fontFamily: "'Cormorant Garamond', serif", color: 'rgba(255,255,255,0.022)', zIndex: 2 }}
-          >
-            OLC
-          </div>
 
           {/* Conteúdo central */}
           <div className="relative h-full flex flex-col items-center justify-center px-6" style={{ zIndex: 3 }}>
@@ -107,7 +78,7 @@ export default function Home() {
               {/* Eyebrow */}
               <motion.p
                 className="font-mono text-[10px] tracking-[0.22em] uppercase"
-                style={{ color: GOLD, fontFamily: "'DM Mono', monospace" }}
+                style={{ color: COLORS.gold, fontFamily: "'DM Mono', monospace" }}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
@@ -127,7 +98,7 @@ export default function Home() {
                   delay={0.5}
                   wordDelay={0.12}
                   className="italic font-light"
-                  style={{ color: GOLD }}
+                  style={{ color: COLORS.gold }}
                 />
               </h1>
 
@@ -152,7 +123,7 @@ export default function Home() {
                 <Link
                   to="/contact"
                   className="inline-flex items-center gap-2 text-sm font-mono tracking-widest uppercase px-6 py-3 transition-all hover:opacity-90 group"
-                  style={{ background: GOLD, color: NAVY, fontFamily: "'DM Mono', monospace" }}
+                  style={{ background: COLORS.gold, color: COLORS.navy, fontFamily: "'DM Mono', monospace" }}
                 >
                   Agendar Consulta
                   <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
@@ -166,15 +137,6 @@ export default function Home() {
                   Conhecer a Firma
                   <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
-              </motion.div>
-
-              {/* Badge OAA */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 1.5 }}
-              >
-               
               </motion.div>
             </div>
 
@@ -190,22 +152,22 @@ export default function Home() {
         </section>
 
         {/* ── Apresentação da Firma ─────────────────────────────────── */}
-        <section className="py-20 md:py-28 px-6 lg:px-8 bg-[#FAFAF8] dark:bg-[#111110] border-b border-[#e8e8e6] dark:border-[#1e1e1c]">
+        <section className="py-20 md:py-28 px-6 lg:px-8" style={{ background: COLORS.white, borderBottom: `1px solid ${COLORS.border}` }}>
           <div className="max-w-5xl mx-auto">
 
             <Reveal type="fadeUp">
               <p
                 className="font-mono text-[10px] tracking-[0.22em] uppercase mb-4"
-                style={{ color: GOLD, fontFamily: "'DM Mono', monospace" }}
+                style={{ color: COLORS.gold, fontFamily: "'DM Mono', monospace" }}
               >
                 Sobre a Firma
               </p>
               <h2
-                className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight tracking-wide text-[#111110] dark:text-[#FAFAF8] mb-6"
-                style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight tracking-wide mb-6"
+                style={{ fontFamily: "'Cormorant Garamond', serif", color: COLORS.navy }}
               >
                 Assessoria jurídica especializada{' '}
-                <em className="italic font-light" style={{ color: GOLD }}>
+                <em className="italic font-light" style={{ color: COLORS.gold }}>
                   ao seu alcance.
                 </em>
               </h2>
@@ -213,8 +175,8 @@ export default function Home() {
 
             <Reveal type="fadeUp" delay={0.1}>
               <p
-                className="text-base md:text-lg font-light leading-relaxed text-[#777] max-w-2xl mb-14"
-                style={{ fontFamily: "'DM Sans', sans-serif", lineHeight: '1.85' }}
+                className="text-base md:text-lg font-light leading-relaxed max-w-2xl mb-14"
+                style={{ fontFamily: "'DM Sans', sans-serif", lineHeight: '1.85', color: COLORS.navy }}
               >
                 {FIRMA_DESC}
               </p>
@@ -222,24 +184,25 @@ export default function Home() {
 
             {/* Três pilares */}
             <Reveal type="fadeUp" delay={0.2}>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-[#e8e8e6] dark:bg-[#1e1e1c]">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-px" style={{ background: COLORS.border }}>
                 {PILARES.map((item) => {
                   const Icon = item.icon;
                   return (
                     <div
                       key={item.label}
-                      className="bg-[#FAFAF8] dark:bg-[#111110] px-6 py-8 space-y-4"
+                      className="px-6 py-8 space-y-4"
+                      style={{ background: COLORS.white }}
                     >
-                      <Icon className="size-5" style={{ color: GOLD }} />
+                      <Icon className="size-5" style={{ color: COLORS.gold }} />
                       <p
                         className="font-mono text-xs tracking-widest uppercase"
-                        style={{ color: GOLD, fontFamily: "'DM Mono', monospace" }}
+                        style={{ color: COLORS.gold, fontFamily: "'DM Mono', monospace" }}
                       >
                         {item.label}
                       </p>
                       <p
-                        className="text-sm font-light leading-relaxed text-[#777]"
-                        style={{ fontFamily: "'DM Sans', sans-serif", lineHeight: '1.8' }}
+                        className="text-sm font-light leading-relaxed"
+                        style={{ fontFamily: "'DM Sans', sans-serif", lineHeight: '1.8', color: COLORS.navy }}
                       >
                         {item.desc}
                       </p>
@@ -253,8 +216,8 @@ export default function Home() {
               <div className="mt-12">
                 <Link
                   to="/about"
-                  className="inline-flex items-center gap-2 text-sm font-mono tracking-widest uppercase text-[#888] hover:text-[#111110] dark:hover:text-[#FAFAF8] transition-colors group"
-                  style={{ fontFamily: "'DM Mono', monospace" }}
+                  className="inline-flex items-center gap-2 text-sm font-mono tracking-widest uppercase transition-colors group"
+                  style={{ color: COLORS.navy, fontFamily: "'DM Mono', monospace" }}
                 >
                   Conhecer a nossa equipa
                   <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
@@ -265,24 +228,25 @@ export default function Home() {
         </section>
 
         {/* ── Números da Firma ─────────────────────────────────────── */}
-        <section className="py-16 md:py-20 px-6 lg:px-8 bg-[#111110]">
+        <section className="py-16 md:py-20 px-6 lg:px-8" style={{ background: COLORS.navy }}>
           <div className="max-w-5xl mx-auto">
             <Reveal type="fadeUp">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[rgba(255,255,255,0.06)]">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-px" style={{ background: 'rgba(255,255,255,0.06)' }}>
                 {NUMEROS.map((item) => (
                   <div
                     key={item.descricao}
-                    className="bg-[#111110] px-6 py-10 text-center space-y-2"
+                    className="px-6 py-10 text-center space-y-2"
+                    style={{ background: COLORS.navy }}
                   >
                     <p
                       className="font-extralight"
-                      style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2.5rem, 6vw, 4rem)', color: GOLD }}
+                      style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2.5rem, 6vw, 4rem)', color: COLORS.gold }}
                     >
                       {item.valor}
                     </p>
                     <p
                       className="text-xs font-light leading-relaxed"
-                      style={{ color: 'rgba(255,255,255,0.4)', fontFamily: "'DM Sans', sans-serif" }}
+                      style={{ color: `${COLORS.white}cc`, fontFamily: "'DM Sans', sans-serif" }}
                     >
                       {item.descricao}
                     </p>
@@ -295,13 +259,13 @@ export default function Home() {
 
         {/* ── Área em destaque ─────────────────────────────────────── */}
         {featuredProject && (
-          <section className="py-20 md:py-28 px-6 lg:px-8 bg-[#FAFAF8] dark:bg-[#111110]">
+          <section className="py-20 md:py-28 px-6 lg:px-8" style={{ background: COLORS.white }}>
             <div className="max-w-5xl mx-auto">
 
               <Reveal type="fadeUp">
                 <p
                   className="font-mono text-xs tracking-widest uppercase mb-10"
-                  style={{ color: GOLD, fontFamily: "'DM Mono', monospace" }}
+                  style={{ color: COLORS.gold, fontFamily: "'DM Mono', monospace" }}
                 >
                   Área em Destaque
                 </p>
@@ -309,7 +273,7 @@ export default function Home() {
 
               <Reveal type="fadeUp" delay={0.1}>
                 <Link to={`/project/${featuredProject.slug}`} className="group block">
-                  <div className="relative overflow-hidden aspect-video bg-[#e8e8e6] dark:bg-[#1e1e1c] mb-6">
+                  <div className="relative overflow-hidden aspect-video mb-6" style={{ background: COLORS.border }}>
                     <img
                       src={featuredProject.coverImage}
                       alt={featuredProject.title}
@@ -317,8 +281,8 @@ export default function Home() {
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500" />
                     <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="p-2" style={{ background: GOLD }}>
-                        <ArrowUpRight className="size-4" style={{ color: NAVY }} />
+                      <div className="p-2" style={{ background: COLORS.gold }}>
+                        <ArrowUpRight className="size-4" style={{ color: COLORS.navy }} />
                       </div>
                     </div>
                   </div>
@@ -326,29 +290,29 @@ export default function Home() {
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <h2
-                        className="text-2xl md:text-3xl font-light tracking-wide mb-1 text-[#111110] dark:text-[#FAFAF8] group-hover:text-[#777] transition-colors"
-                        style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                        className="text-2xl md:text-3xl font-light tracking-wide mb-1 transition-colors"
+                        style={{ fontFamily: "'Cormorant Garamond', serif", color: COLORS.navy }}
                       >
                         {featuredProject.title}
                       </h2>
                       <p
-                        className="text-sm font-mono tracking-wide capitalize text-[#999]"
-                        style={{ fontFamily: "'DM Mono', monospace" }}
+                        className="text-sm font-mono tracking-wide capitalize"
+                        style={{ color: COLORS.navy, fontFamily: "'DM Mono', monospace", opacity: 0.6 }}
                       >
                         {featuredProject.category} · {featuredProject.year}
                       </p>
                     </div>
-                    <ArrowRight className="size-5 text-[#999] mt-1 transition-transform group-hover:translate-x-1 shrink-0" />
+                    <ArrowRight className="size-5 mt-1 transition-transform group-hover:translate-x-1 shrink-0" style={{ color: COLORS.navy }} />
                   </div>
                 </Link>
               </Reveal>
 
               <Reveal type="fadeUp" delay={0.2}>
-                <div className="mt-12 pt-8 border-t border-[#e8e8e6] dark:border-[#1e1e1c]">
+                <div className="mt-12 pt-8" style={{ borderTop: `1px solid ${COLORS.border}` }}>
                   <Link
                     to="/portfolio"
-                    className="inline-flex items-center gap-2 text-sm font-mono tracking-widest uppercase text-[#888] hover:text-[#111110] dark:hover:text-[#FAFAF8] transition-colors group"
-                    style={{ fontFamily: "'DM Mono', monospace" }}
+                    className="inline-flex items-center gap-2 text-sm font-mono tracking-widest uppercase transition-colors group"
+                    style={{ color: COLORS.navy, fontFamily: "'DM Mono', monospace" }}
                   >
                     Ver todas as áreas de prática
                     <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
