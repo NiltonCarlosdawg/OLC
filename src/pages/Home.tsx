@@ -6,7 +6,8 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { ArrowRight, ArrowUpRight, Scale, ShieldCheck, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { COLORS } from '@/constants/colors';
-import ImagemDestaque from '@/assets/medium-shot-man-working-as-lawyer.jpg.jpeg';
+import fotoDestaque from '@/assets/medium-shot-man-working-as-lawyer.jpg.jpeg';
+
 
 
 // ── Conteúdo institucional ───────────────────────────────────────
@@ -282,7 +283,7 @@ export default function Home() {
                 <Link to={`/project/${featuredProject.slug}`} className="group block">
                   <div className="relative overflow-hidden aspect-video mb-6" style={{ background: COLORS.border }}>
                     <img
-                      src={featuredProject.coverImage}
+                      src={fotoDestaque}
                       alt={featuredProject.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />

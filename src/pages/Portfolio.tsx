@@ -6,6 +6,9 @@ import { Logo } from '@/components/ui/Logo';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { COLORS } from '@/constants/colors';
+import fotoTrabalhando from '@/assets/happy-confident-male-professional-posing-with-arms-folded.jpg.jpeg';
+import fotoBalanca from '@/assets/still-life-with-scales-justice.jpg.jpeg';
+
 
 const INTRO = 'A nossa firma presta assessoria jurídica especializada em seis grandes domínios do Direito, ' +
   'assegurando aos clientes um serviço integrado, rigoroso e orientado para os resultados, ' +

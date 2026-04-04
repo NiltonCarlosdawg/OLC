@@ -40,7 +40,7 @@ export const projects: Project[] = [
     slug: 'propriedade-intelectual',
     badge: 'Área Principal',
     // Light bulb / idea — criatividade e protecção de activos intelectuais
-    coverImage: 'src/assets/happy-confident-male-professional-posing-with-arms-folded.jpg.jpeg',
+    coverImage:' fotoTrabalhando',
     description:
       'Protecção e gestão estratégica de activos intelectuais. Registo de marcas e patentes, defesa de direitos de autor e combate à contrafacção junto do IAPI e tribunais angolanos.',
     stack:
@@ -71,7 +71,7 @@ export const projects: Project[] = [
     slug: 'direito-societario',
     badge: 'Especialização',
     // Boardroom / corporate governance — órgãos de administração
-    coverImage: 'src/assets/still-life-with-scales-justice.jpg.jpeg',
+    coverImage: 'fotoBalanca',
     description:
       'Constituição de sociedades, pactos sociais, governação corporativa e assessoria a órgãos de administração. Expertise nos quadros regulatórios angolanos ao abrigo da Lei n.º 11/15.',
     stack:
