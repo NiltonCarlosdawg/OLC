@@ -6,6 +6,8 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { ArrowRight, ArrowUpRight, Scale, ShieldCheck, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { COLORS } from '@/constants/colors';
+import ImagemDestaque from '@/assets/medium-shot-man-working-as-lawyer.jpg.jpeg';
+
 
 // ── Conteúdo institucional ───────────────────────────────────────
 const FIRMA_NOME     = 'OLC';
@@ -88,8 +90,13 @@ export default function Home() {
 
               {/* H1 */}
               <h1
-                className="font-extralight tracking-widest text-white leading-none"
-                style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(3.5rem, 9vw, 8rem)' }}
+                 className="font-extralight tracking-widest text-white"
+  style={{ 
+    fontFamily: "'Cormorant Garamond', serif", 
+    fontSize: 'clamp(3.5rem, 9vw, 8rem)',
+    lineHeight: '1.2',  // ← Muda de "none" (que é ~1) para 1.2
+    marginBottom: '0.25rem'
+  }}
               >
                 <TextReveal text={FIRMA_NOME} delay={0.3} wordDelay={0.12} />
                 <br />
@@ -146,7 +153,7 @@ export default function Home() {
               animate={{ opacity: 1 }}
               transition={{ delay: 1.8, duration: 0.8 }}
             >
-              <ScrollIndicator />
+              
             </motion.div>
           </div>
         </section>

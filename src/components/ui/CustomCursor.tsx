@@ -11,18 +11,6 @@ let _pid = 0;
 let _rid = 0;
 
 // ─── Gavel SVG ────────────────────────────────────────────────────────────────
-// Same visual grammar as the original cursor:
-//   • Stroke-only, no fills (like the ring and dot — pure outline)
-//   • 1px white strokes + 0.5px secondary details
-//   • mix-blend-difference applied at wrapper level
-//   • Pivot = junction of head and handle (mirrors where original "dot" lived)
-//
-// Geometry (44×44 viewBox):
-//   Head  → rect (2,2)→(24,13), rx=2
-//   Face  → horizontal rule at y=7.5 (chamfer line, 0.5px)
-//   Notch → vertical line at x=7 (handle side detail, 0.5px)
-//   Handle→ rect (17,12) 6×26 rx=1.5, rotated 45° around (18,13)
-//   Pivot → circle r=1 at (18,13) — the "dot" of the original
 function GavelIcon({ size = 44 }: { size?: number }) {
   return (
     <svg
@@ -33,32 +21,10 @@ function GavelIcon({ size = 44 }: { size?: number }) {
       xmlns="http://www.w3.org/2000/svg"
       style={{ display: 'block', overflow: 'visible' }}
     >
-      {/* Handle — outline rect, rotated 45° from head-handle junction */}
-      <rect
-        x="17" y="12" width="6" height="26" rx="1.5"
-        stroke="white" strokeWidth="1" fill="none"
-        transform="rotate(45 18 13)"
-      />
-
-      {/* Head — outer outline */}
-      <rect
-        x="2" y="2" width="22" height="11" rx="2"
-        stroke="white" strokeWidth="1" fill="none"
-      />
-
-      {/* Head — chamfer / face divider line */}
-      <line
-        x1="2" y1="7.5" x2="24" y2="7.5"
-        stroke="white" strokeWidth="0.5" strokeOpacity="0.55"
-      />
-
-      {/* Head — handle-side notch */}
-      <line
-        x1="7" y1="2" x2="7" y2="13"
-        stroke="white" strokeWidth="0.5" strokeOpacity="0.45"
-      />
-
-      {/* Pivot dot — the "dot" of the original cursor, at junction */}
+      <rect x="17" y="12" width="6" height="26" rx="1.5" stroke="white" strokeWidth="1" fill="none" transform="rotate(45 18 13)" />
+      <rect x="2" y="2" width="22" height="11" rx="2" stroke="white" strokeWidth="1" fill="none" />
+      <line x1="2" y1="7.5" x2="24" y2="7.5" stroke="white" strokeWidth="0.5" strokeOpacity="0.55" />
+      <line x1="7" y1="2" x2="7" y2="13" stroke="white" strokeWidth="0.5" strokeOpacity="0.45" />
       <circle cx="18" cy="13" r="1" fill="white" />
     </svg>
   );
@@ -73,7 +39,37 @@ export function CustomCursor() {
   const [particles,     setParticles]     = useState<Particle[]>([]);
   const [ripples,       setRipples]       = useState<Ripple[]>([]);
 
-  // Instant cursor position (for spawn origins)
+  // 🔧 ALTERAÇÃO AQUI: Forçar cursor padrão no body quando o componente montar
+  useEffect(() => {
+    // Forçar o cursor padrão no body e html
+    document.body.style.cursor = 'default';
+    document.documentElement.style.cursor = 'default';
+    
+    // Adicionar um estilo global temporário
+    const style = document.createElement('style');
+    style.id = 'force-default-cursor';
+    style.textContent = `
+      * {
+        cursor: default !important;
+      }
+      a, button, [role="button"], input, textarea, select, label {
+        cursor: pointer !important;
+      }
+      input, textarea {
+        cursor: text !important;
+      }
+    `;
+    document.head.appendChild(style);
+    
+    return () => {
+      // Limpar quando o componente desmontar (opcional)
+      document.body.style.cursor = '';
+      document.documentElement.style.cursor = '';
+      const existingStyle = document.getElementById('force-default-cursor');
+      if (existingStyle) existingStyle.remove();
+    };
+  }, []);
+
   const cursorX = useMotionValue(-200);
   const cursorY = useMotionValue(-200);
 
@@ -221,23 +217,7 @@ export function CustomCursor() {
         As % of 44px icon: x=18/44=40.9%, y=13/44=29.5%.
         Translate so that pivot lands on the spring position, then rotate around it.
       */}
-      <motion.div
-        className="fixed top-0 left-0 z-[9999] pointer-events-none mix-blend-difference"
-        style={{
-          x: gavelX,
-          y: gavelY,
-          translateX: '-40.9%',
-          translateY: '-29.5%',
-          originX: '40.9%',
-          originY: '29.5%',
-          rotate:  rotateSpring,
-          scale:   scaleSpring,
-          opacity: isVisible ? 1 : 0,
-          transition: 'opacity 0.15s',
-        }}
-      >
-        <GavelIcon size={44} />
-      </motion.div>
+     
     </>
   );
 }

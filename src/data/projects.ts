@@ -9,7 +9,7 @@ export const projects: Project[] = [
     slug: 'direito-empresarial',
     badge: 'Área Principal',
     // Handshake / business deal — M&A e contratos comerciais
-    coverImage: 'https://images.unsplash.com/photo-1664575602554-2087b04935a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    coverImage: '/src/assets/medium-shot-man-working-as-lawyer.jpg.jpeg',
     description:
       'Assessoria completa a empresas nacionais e internacionais. Contratos comerciais, fusões e aquisições, reestruturações e negociações estratégicas no mercado angolano.',
     stack:
@@ -40,7 +40,7 @@ export const projects: Project[] = [
     slug: 'propriedade-intelectual',
     badge: 'Área Principal',
     // Light bulb / idea — criatividade e protecção de activos intelectuais
-    coverImage: 'https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    coverImage: 'src/assets/happy-confident-male-professional-posing-with-arms-folded.jpg.jpeg',
     description:
       'Protecção e gestão estratégica de activos intelectuais. Registo de marcas e patentes, defesa de direitos de autor e combate à contrafacção junto do IAPI e tribunais angolanos.',
     stack:
@@ -71,7 +71,7 @@ export const projects: Project[] = [
     slug: 'direito-societario',
     badge: 'Especialização',
     // Boardroom / corporate governance — órgãos de administração
-    coverImage: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    coverImage: 'src/assets/still-life-with-scales-justice.jpg.jpeg',
     description:
       'Constituição de sociedades, pactos sociais, governação corporativa e assessoria a órgãos de administração. Expertise nos quadros regulatórios angolanos ao abrigo da Lei n.º 11/15.',
     stack:

@@ -1,8 +1,26 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-* {
+/* {
   cursor: pointer; 
+}*/
+/* Garantir que o cursor padrão está visível em toda a página */
+* {
+  cursor: auto !important;
+}
+
+body, html {
+  cursor: default;
+}
+
+/* Manter o cursor pointer em elementos interativos */
+a, button, [role="button"], input, textarea, select, label, [tabindex] {
+  cursor: pointer;
+}
+
+/* Manter cursor texto em inputs */
+input, textarea {
+  cursor: text;
 }
 
 

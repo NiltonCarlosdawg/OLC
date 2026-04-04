@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { COLORS } from '@/constants/colors';
 
 // Importa a imagem do logotipo
-import logoSvg from '@/assets/logo.png';
+import logoSvg from '@/assets/logoretoebranco.png';
 
 const navLinks = [
   { name: 'Início',          path: '/'         },
@@ -79,7 +79,7 @@ export function Footer() {
               </a>
               <a href="tel:+244923481427" className="flex items-center gap-3 text-sm" style={{ color: `${COLORS.white}cc` }}>
                 <Phone className="size-4" style={{ color: COLORS.gold }} />
-                +244 923 481 427
+                +244 923 481 472
               </a>
               <a href="tel:+244958087582" className="flex items-center gap-3 text-sm" style={{ color: `${COLORS.white}cc` }}>
                 <Phone className="size-4" style={{ color: COLORS.gold }} />
