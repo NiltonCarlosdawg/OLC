@@ -3,6 +3,9 @@ import courthouseImg from '@/assets/courthouse.webp';
 import justiceScalesImg from '@/assets/justice-scales.webp';
 import lawyerProfessionalImg from '@/assets/lawyer-professional.webp';
 import legalLibraryImg from '@/assets/legal-library.webp';
+import legalBooksImg from '@/assets/legal-books.webp';
+import gavelImg from '@/assets/gavel.webp';
+import auctionImg from '@/assets/auction.webp';
 
 export const projects: Project[] = [
   {
@@ -44,7 +47,7 @@ export const projects: Project[] = [
     slug: 'propriedade-intelectual',
     badge: 'Área Principal',
     // Light bulb / idea — criatividade e protecção de activos intelectuais
-    coverImage: lawyerProfessionalImg,
+    coverImage: legalBooksImg,
     description:
       'Protecção e gestão estratégica de activos intelectuais. Registo de marcas e patentes, defesa de direitos de autor e combate à contrafacção junto do IAPI e tribunais angolanos.',
     stack:
@@ -75,7 +78,7 @@ export const projects: Project[] = [
     slug: 'direito-societario',
     badge: 'Especialização',
     // Boardroom / corporate governance — órgãos de administração
-    coverImage: justiceScalesImg,
+    coverImage: legalLibraryImg,
     description:
       'Constituição de sociedades, pactos sociais, governação corporativa e assessoria a órgãos de administração. Expertise nos quadros regulatórios angolanos ao abrigo da Lei n.º 11/15.',
     stack:
@@ -137,7 +140,7 @@ export const projects: Project[] = [
     slug: 'direito-internacional',
     badge: 'Especialização',
     // Globe / international trade — operações transfronteiriças
-    coverImage: legalLibraryImg,
+    coverImage: gavelImg,
     description:
       'Apoio jurídico a investimento estrangeiro em Angola e a empresas angolanas em expansão regional na SADC. Estruturação de operações transfronteiriças e joint ventures internacionais.',
     stack:
@@ -168,7 +171,7 @@ export const projects: Project[] = [
     slug: 'assessoria-estrategica',
     badge: 'Retainer',
     // Strategy meeting / whiteboard — parceria jurídica contínua
-    coverImage: lawyerProfessionalImg,
+    coverImage: auctionImg,
     description:
       'Parceria jurídica contínua com a direcção das empresas através de retainer jurídico. Identificação proactiva de riscos, oportunidades e enquadramento regulatório em tempo real.',
     stack:
