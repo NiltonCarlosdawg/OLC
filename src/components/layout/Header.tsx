@@ -36,7 +36,7 @@ export function Header() {
         <div className="flex items-center justify-between h-20">
 
           {/* ── Logo OLC Advogados (IMAGEM) ───────────────────────── */}
-          <Link to="/" className="shrink-0">
+          <Link to="/" className="shrink-0" onClick={() => window.scrollTo(0, 0)}>
             <img 
               src={logoSvg} 
               alt="OLC Advogados - Sociedade de Advogados, RL"
