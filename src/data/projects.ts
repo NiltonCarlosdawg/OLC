@@ -27,16 +27,16 @@ export const projects: Project[] = [
     images: [
       {
         id: '1-1',
-        // Business team — equipa de negócios
-        src: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200',
-        alt: 'Equipa de negócios — Direito Empresarial',
+        // Professional woman — profissional negra
+        src: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200',
+        alt: 'Profissional negra — Direito Empresarial',
         aspectRatio: 'landscape',
       },
       {
         id: '1-2',
-        // Business meeting — reunião de negócios
-        src: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200',
-        alt: 'Reunião de negócios — Direito Empresarial',
+        // Business team meeting — equipa de negócios
+        src: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200',
+        alt: 'Equipa de negócios — Direito Empresarial',
         aspectRatio: 'landscape',
       },
     ],
