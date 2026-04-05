@@ -6,6 +6,8 @@ import legalLibraryImg from '@/assets/legal-library.webp';
 import legalBooksImg from '@/assets/legal-books.webp';
 import gavelImg from '@/assets/gavel.webp';
 import auctionImg from '@/assets/auction.webp';
+import handshakeImg from '@/assets/handshake.webp';
+import businessMeetingImg from '@/assets/business-meeting.webp';
 
 export const projects: Project[] = [
   {
@@ -16,7 +18,7 @@ export const projects: Project[] = [
     slug: 'direito-empresarial',
     badge: 'Área Principal',
     // Handshake / business deal — M&A e contratos comerciais
-    coverImage: courthouseImg,
+    coverImage: handshakeImg,
     description:
       'Assessoria completa a empresas nacionais e internacionais. Contratos comerciais, fusões e aquisições, reestruturações e negociações estratégicas no mercado angolano.',
     stack:
@@ -26,15 +28,15 @@ export const projects: Project[] = [
       {
         id: '1-1',
         // Business handshake — acordo comercial
-        src: 'https://images.unsplash.com/photo-1664575602554-2087b04935a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200',
+        src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200',
         alt: 'Acordo comercial — Direito Empresarial',
         aspectRatio: 'landscape',
       },
       {
         id: '1-2',
-        // Signing contract — assinatura de contrato
-        src: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200',
-        alt: 'Assinatura de contrato comercial',
+        // Business meeting — reunião de negócios
+        src: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200',
+        alt: 'Reunião de negócios — Direito Empresarial',
         aspectRatio: 'landscape',
       },
     ],
