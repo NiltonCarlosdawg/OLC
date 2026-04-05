@@ -2,7 +2,7 @@ import { Mail, MapPin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { COLORS } from '@/constants/colors';
 
-import logoSvg from '@/assets/ico.svg';
+import logoSvg from '@/assets/logo.png';
 
 const navLinks = [
   { name: 'Início',          path: '/'         },
