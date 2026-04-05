@@ -8,8 +8,7 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { COLORS } from '@/constants/colors';
 
-// Importa a imagem do logotipo (ajusta o caminho conforme a tua pasta)
-import logoSvg from '@/assets/logo.png'; // ou .svg
+import logoSvg from '/ico.svg';
 
 const navLinks = [
   { name: 'Início',          path: '/'         },

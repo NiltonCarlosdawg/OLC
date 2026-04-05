@@ -2,8 +2,7 @@ import { Mail, MapPin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { COLORS } from '@/constants/colors';
 
-// Importa a imagem do logotipo
-import logoSvg from '@/assets/logoretoebranco.png';
+import logoSvg from '/ico.svg';
 
 const navLinks = [
   { name: 'Início',          path: '/'         },
