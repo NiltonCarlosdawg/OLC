@@ -163,7 +163,7 @@ export function ContactForm() {
               <FormControl>
                 <Input
                   placeholder="O seu nome completo"
-                  className="font-light border-[#e8e8e6] dark:border-[#1e1e1c] bg-white dark:bg-[#111110] text-[#111110] dark:text-[#FAFAF8] focus:border-[#C9A84C] focus:ring-0 rounded-none h-11"
+                  className="font-light border-border bg-background text-foreground focus:border-[#C9A84C] focus:ring-0 rounded-none h-11 dark:focus:border-[#C9A84C]"
                   style={{ fontFamily: "'DM Sans', sans-serif" }}
                   {...field}
                 />
@@ -189,7 +189,7 @@ export function ContactForm() {
                 <Input
                   type="email"
                   placeholder="o.seu.email@exemplo.com"
-                  className="font-light border-[#e8e8e6] dark:border-[#1e1e1c] bg-white dark:bg-[#111110] text-[#111110] dark:text-[#FAFAF8] focus:border-[#C9A84C] focus:ring-0 rounded-none h-11"
+                  className="font-light border-border bg-background text-foreground focus:border-[#C9A84C] focus:ring-0 rounded-none h-11 dark:focus:border-[#C9A84C]"
                   style={{ fontFamily: "'DM Sans', sans-serif" }}
                   {...field}
                 />
@@ -215,7 +215,7 @@ export function ContactForm() {
                 <Input
                   type="tel"
                   placeholder="+244 9XX XXX XXX"
-                  className="font-light border-[#e8e8e6] dark:border-[#1e1e1c] bg-white dark:bg-[#111110] text-[#111110] dark:text-[#FAFAF8] focus:border-[#C9A84C] focus:ring-0 rounded-none h-11"
+                  className="font-light border-border bg-background text-foreground focus:border-[#C9A84C] focus:ring-0 rounded-none h-11 dark:focus:border-[#C9A84C]"
                   style={{ fontFamily: "'DM Sans', sans-serif" }}
                   {...field}
                 />
@@ -240,13 +240,13 @@ export function ContactForm() {
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger
-                    className="font-light border-[#e8e8e6] dark:border-[#1e1e1c] bg-white dark:bg-[#111110] text-[#111110] dark:text-[#FAFAF8] focus:ring-0 rounded-none h-11"
+                    className="font-light border-border bg-background text-foreground focus:ring-0 rounded-none h-11 dark:focus:border-[#C9A84C]"
                     style={{ fontFamily: "'DM Sans', sans-serif" }}
                   >
                     <SelectValue placeholder="Seleccione a área jurídica" />
                   </SelectTrigger>
                 </FormControl>
-                <SelectContent className="bg-white dark:bg-[#111110] border-[#e8e8e6] dark:border-[#1e1e1c] z-50 rounded-none">
+                <SelectContent className="bg-background border-border z-50 rounded-none">
                   {[
                     { value: 'empresarial',            label: 'Direito Empresarial' },
                     { value: 'propriedade-intelectual', label: 'Propriedade Intelectual' },
@@ -287,7 +287,7 @@ export function ContactForm() {
               <FormControl>
                 <Textarea
                   placeholder="Descreva de forma sucinta a sua situação jurídica ou a matéria sobre a qual pretende aconselhamento..."
-                  className="min-h-36 font-light resize-none border-[#e8e8e6] dark:border-[#1e1e1c] bg-white dark:bg-[#111110] text-[#111110] dark:text-[#FAFAF8] focus:border-[#C9A84C] focus:ring-0 rounded-none"
+                  className="min-h-36 font-light resize-none border-border bg-background text-foreground focus:border-[#C9A84C] focus:ring-0 rounded-none dark:focus:border-[#C9A84C]"
                   style={{ fontFamily: "'DM Sans', sans-serif" }}
                   {...field}
                 />
