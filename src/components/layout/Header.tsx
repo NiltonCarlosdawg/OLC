@@ -40,7 +40,7 @@ export function Header() {
             <img 
               src={logoSvg} 
               alt="OLC Advogados - Sociedade de Advogados, RL"
-              className="h-12 w-auto object-contain"
+              className="h-16 w-auto object-contain"
             />
           </Link>
 
@@ -88,7 +88,7 @@ export function Header() {
 
                 {/* Logo no menu mobile */}
                 <div className="mt-6 mb-8">
-                  <img src={logoSvg} alt="OLC Advogados" className="h-10 w-auto" />
+                  <img src={logoSvg} alt="OLC Advogados"                   className="h-14 w-auto" />
                 </div>
 
                 <nav className="flex flex-col gap-6">

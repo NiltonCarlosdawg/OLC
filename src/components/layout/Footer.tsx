@@ -34,7 +34,7 @@ export function Footer() {
 
           {/* Coluna 1 — Logo */}
           <div className="space-y-4">
-            <img src={logoSvg} alt="OLC Advogados" className="h-16 w-auto" />
+            <img src={logoSvg} alt="OLC Advogados" className="h-20 w-auto" />
             <p className="text-sm font-light leading-relaxed" style={{ color: `${COLORS.white}cc` }}>
               Assessoria jurídica especializada ao serviço das empresas e particulares em Angola.
             </p>
