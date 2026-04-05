@@ -5,7 +5,7 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { Reveal, StaggerReveal } from '@/components/ui/animations';
 import { Logo } from '@/components/ui/Logo';
 import { COLORS } from '@/constants/colors';
-import img1 from '@/assets/1.jpg';
+import buildingImg from '@/assets/building.webp';
 
 // Equipa da firma
 const TEAM = [
@@ -113,7 +113,7 @@ export default function About() {
                 <div className="space-y-6">
                   <div className="aspect-[3/4] relative overflow-hidden" style={{ background: COLORS.border }}>
                     <img
-                      src={img1}
+                      src={buildingImg}
                       alt="Escritório da Sociedade de Advogados"
                       className="absolute inset-0 w-full h-full object-cover"
                     />
