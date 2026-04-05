@@ -27,15 +27,15 @@ export const projects: Project[] = [
     images: [
       {
         id: '1-1',
-        // Business handshake — acordo comercial
-        src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200',
-        alt: 'Acordo comercial — Direito Empresarial',
+        // Business team — equipa de negócios
+        src: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200',
+        alt: 'Equipa de negócios — Direito Empresarial',
         aspectRatio: 'landscape',
       },
       {
         id: '1-2',
         // Business meeting — reunião de negócios
-        src: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200',
+        src: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200',
         alt: 'Reunião de negócios — Direito Empresarial',
         aspectRatio: 'landscape',
       },
