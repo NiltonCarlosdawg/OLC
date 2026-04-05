@@ -6,8 +6,9 @@ import legalLibraryImg from '@/assets/legal-library.webp';
 import legalBooksImg from '@/assets/legal-books.webp';
 import gavelImg from '@/assets/gavel.webp';
 import auctionImg from '@/assets/auction.webp';
-import handshakeImg from '@/assets/handshake.webp';
-import businessMeetingImg from '@/assets/business-meeting.webp';
+import img1 from '@/assets/1.jpg';
+import img2 from '@/assets/2.jpg';
+import img3 from '@/assets/3.jpg';
 
 export const projects: Project[] = [
   {
@@ -17,8 +18,8 @@ export const projects: Project[] = [
     year: '2015',
     slug: 'direito-empresarial',
     badge: 'Área Principal',
-    // Handshake / business deal — M&A e contratos comerciais
-    coverImage: handshakeImg,
+    // M&A e contratos comerciais
+    coverImage: img1,
     description:
       'Assessoria completa a empresas nacionais e internacionais. Contratos comerciais, fusões e aquisições, reestruturações e negociações estratégicas no mercado angolano.',
     stack:
@@ -27,16 +28,14 @@ export const projects: Project[] = [
     images: [
       {
         id: '1-1',
-        // Professional woman — profissional negra
-        src: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200',
-        alt: 'Profissional negra — Direito Empresarial',
+        src: img2,
+        alt: 'Direito Empresarial',
         aspectRatio: 'landscape',
       },
       {
         id: '1-2',
-        // Business team meeting — equipa de negócios
-        src: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200',
-        alt: 'Equipa de negócios — Direito Empresarial',
+        src: img3,
+        alt: 'Direito Empresarial',
         aspectRatio: 'landscape',
       },
     ],
