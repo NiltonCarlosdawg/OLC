@@ -1,4 +1,8 @@
 import type { Project } from '@/types';
+import courthouseImg from '@/assets/courthouse.webp';
+import justiceScalesImg from '@/assets/justice-scales.webp';
+import lawyerProfessionalImg from '@/assets/lawyer-professional.webp';
+import legalLibraryImg from '@/assets/legal-library.webp';
 
 export const projects: Project[] = [
   {
@@ -9,7 +13,7 @@ export const projects: Project[] = [
     slug: 'direito-empresarial',
     badge: 'Área Principal',
     // Handshake / business deal — M&A e contratos comerciais
-    coverImage: '@/assets/courthouse.webp',
+    coverImage: courthouseImg,
     description:
       'Assessoria completa a empresas nacionais e internacionais. Contratos comerciais, fusões e aquisições, reestruturações e negociações estratégicas no mercado angolano.',
     stack:
@@ -40,7 +44,7 @@ export const projects: Project[] = [
     slug: 'propriedade-intelectual',
     badge: 'Área Principal',
     // Light bulb / idea — criatividade e protecção de activos intelectuais
-    coverImage: '@/assets/lawyer-professional.webp',
+    coverImage: lawyerProfessionalImg,
     description:
       'Protecção e gestão estratégica de activos intelectuais. Registo de marcas e patentes, defesa de direitos de autor e combate à contrafacção junto do IAPI e tribunais angolanos.',
     stack:
@@ -71,7 +75,7 @@ export const projects: Project[] = [
     slug: 'direito-societario',
     badge: 'Especialização',
     // Boardroom / corporate governance — órgãos de administração
-    coverImage: '@/assets/justice-scales.webp',
+    coverImage: justiceScalesImg,
     description:
       'Constituição de sociedades, pactos sociais, governação corporativa e assessoria a órgãos de administração. Expertise nos quadros regulatórios angolanos ao abrigo da Lei n.º 11/15.',
     stack:
@@ -102,7 +106,7 @@ export const projects: Project[] = [
     slug: 'contencioso-arbitragem',
     badge: 'Especialização',
     // Gavel / scales of justice — tribunal e arbitragem
-    coverImage: '@/assets/justice-scales.webp',
+    coverImage: justiceScalesImg,
     description:
       'Representação em litígios comerciais perante os tribunais angolanos e em processos de arbitragem nacional e internacional, incluindo execução de sentenças ao abrigo da Convenção de Nova Iorque.',
     stack:
@@ -133,7 +137,7 @@ export const projects: Project[] = [
     slug: 'direito-internacional',
     badge: 'Especialização',
     // Globe / international trade — operações transfronteiriças
-    coverImage: '@/assets/legal-library.webp',
+    coverImage: legalLibraryImg,
     description:
       'Apoio jurídico a investimento estrangeiro em Angola e a empresas angolanas em expansão regional na SADC. Estruturação de operações transfronteiriças e joint ventures internacionais.',
     stack:
@@ -164,7 +168,7 @@ export const projects: Project[] = [
     slug: 'assessoria-estrategica',
     badge: 'Retainer',
     // Strategy meeting / whiteboard — parceria jurídica contínua
-    coverImage: '@/assets/lawyer-professional.webp',
+    coverImage: lawyerProfessionalImg,
     description:
       'Parceria jurídica contínua com a direcção das empresas através de retainer jurídico. Identificação proactiva de riscos, oportunidades e enquadramento regulatório em tempo real.',
     stack:
