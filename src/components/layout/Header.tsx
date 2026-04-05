@@ -8,7 +8,7 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { COLORS } from '@/constants/colors';
 
-import logoSvg from '/ico.svg';
+import logoSvg from '@/assets/ico.svg';
 
 const navLinks = [
   { name: 'Início',          path: '/'         },
