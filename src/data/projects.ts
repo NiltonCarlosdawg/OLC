@@ -102,7 +102,7 @@ export const projects: Project[] = [
     slug: 'contencioso-arbitragem',
     badge: 'Especialização',
     // Gavel / scales of justice — tribunal e arbitragem
-    coverImage: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    coverImage: '@/assets/justice-scales.jpg',
     description:
       'Representação em litígios comerciais perante os tribunais angolanos e em processos de arbitragem nacional e internacional, incluindo execução de sentenças ao abrigo da Convenção de Nova Iorque.',
     stack:
@@ -133,7 +133,7 @@ export const projects: Project[] = [
     slug: 'direito-internacional',
     badge: 'Especialização',
     // Globe / international trade — operações transfronteiriças
-    coverImage: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    coverImage: '@/assets/legal-library.jpg',
     description:
       'Apoio jurídico a investimento estrangeiro em Angola e a empresas angolanas em expansão regional na SADC. Estruturação de operações transfronteiriças e joint ventures internacionais.',
     stack:
@@ -164,7 +164,7 @@ export const projects: Project[] = [
     slug: 'assessoria-estrategica',
     badge: 'Retainer',
     // Strategy meeting / whiteboard — parceria jurídica contínua
-    coverImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    coverImage: '@/assets/lawyer-professional.jpg',
     description:
       'Parceria jurídica contínua com a direcção das empresas através de retainer jurídico. Identificação proactiva de riscos, oportunidades e enquadramento regulatório em tempo real.',
     stack:
