@@ -6,7 +6,7 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { ArrowRight, ArrowUpRight, Scale, ShieldCheck, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { COLORS } from '@/constants/colors';
-import fotoDestaque from '@/assets/courthouse.jpg';
+import fotoDestaque from '@/assets/courthouse.webp';
 
 
 
