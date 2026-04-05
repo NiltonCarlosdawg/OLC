@@ -9,7 +9,7 @@ export const projects: Project[] = [
     slug: 'direito-empresarial',
     badge: 'Área Principal',
     // Handshake / business deal — M&A e contratos comerciais
-    coverImage: '/src/assets/medium-shot-man-working-as-lawyer.jpg.jpeg',
+    coverImage: '@/assets/courthouse.jpg',
     description:
       'Assessoria completa a empresas nacionais e internacionais. Contratos comerciais, fusões e aquisições, reestruturações e negociações estratégicas no mercado angolano.',
     stack:
@@ -40,7 +40,7 @@ export const projects: Project[] = [
     slug: 'propriedade-intelectual',
     badge: 'Área Principal',
     // Light bulb / idea — criatividade e protecção de activos intelectuais
-    coverImage:' fotoTrabalhando',
+    coverImage: '@/assets/lawyer-professional.jpg',
     description:
       'Protecção e gestão estratégica de activos intelectuais. Registo de marcas e patentes, defesa de direitos de autor e combate à contrafacção junto do IAPI e tribunais angolanos.',
     stack:
@@ -71,7 +71,7 @@ export const projects: Project[] = [
     slug: 'direito-societario',
     badge: 'Especialização',
     // Boardroom / corporate governance — órgãos de administração
-    coverImage: 'fotoBalanca',
+    coverImage: '@/assets/justice-scales.jpg',
     description:
       'Constituição de sociedades, pactos sociais, governação corporativa e assessoria a órgãos de administração. Expertise nos quadros regulatórios angolanos ao abrigo da Lei n.º 11/15.',
     stack:
