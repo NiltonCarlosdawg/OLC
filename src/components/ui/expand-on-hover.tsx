@@ -44,13 +44,9 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
-// @ts-ignore
 import "swiper/css";
-// @ts-ignore
 import "swiper/css/effect-creative";
-// @ts-ignore
 import "swiper/css/pagination";
-// @ts-ignore
 import "swiper/css/autoplay";
 
 import { cn } from "@/lib/utils";

@@ -39,6 +39,7 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
   className = "",
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const observerRef = useRef<any>(null);
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
   const splitHeadingsRef = useRef<SplitText[]>([]);

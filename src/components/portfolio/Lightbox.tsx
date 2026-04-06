@@ -37,9 +37,9 @@ export function Lightbox({
 
     const handleKeyPress = (e: KeyboardEvent) => {
       if (e.key === 'ArrowLeft') {
-        handlePrevious();
+        if (currentIndex > 0) onNavigate(currentIndex - 1);
       } else if (e.key === 'ArrowRight') {
-        handleNext();
+        if (currentIndex < totalImages - 1) onNavigate(currentIndex + 1);
       } else if (e.key === 'Escape') {
         onClose();
       }
@@ -47,7 +47,7 @@ export function Lightbox({
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [isOpen, currentIndex]);
+  }, [isOpen, currentIndex, totalImages, onNavigate, onClose]);
 
   // Touch gesture handlers
   const handleTouchStart = (e: React.TouchEvent) => {

@@ -270,7 +270,7 @@ export const Scroller = ({
         {items.map((child, index) => (
           <div
             key={index}
-            // @ts-ignore
+            // @ts-expect-error - necessary for ref callback pattern
             ref={(el) => (itemsRef.current[index] = el)}
           >
             {child}

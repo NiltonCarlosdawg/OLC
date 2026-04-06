@@ -81,7 +81,7 @@ export function Reveal({
   once = true,
 }: RevealProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once, margin: '-80px' as any });
+  const isInView = useInView(ref, { once, margin: '-80px' });
 
   return (
     <motion.div
@@ -116,7 +116,7 @@ export function StaggerReveal({
   once = true,
 }: StaggerRevealProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once, margin: '-60px' as any });
+  const isInView = useInView(ref, { once, margin: '-60px' });
 
   const container: Variants = {
     hidden: {},
@@ -125,10 +125,10 @@ export function StaggerReveal({
     },
   };
 
-  const itemVariant: Variants = {
-    hidden: variants[type].hidden as object,
+  const itemVariant = {
+    hidden: variants[type].hidden,
     visible: {
-      ...(variants[type].visible as object),
+      ...variants[type].visible,
       transition: { duration, ease: EASE },
     },
   };
@@ -168,7 +168,7 @@ export function TextReveal({
   once = true,
 }: TextRevealProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once, margin: '-50px' as any });
+  const isInView = useInView(ref, { once, margin: '-50px' });
 
   const words = text.split(' ');
 
