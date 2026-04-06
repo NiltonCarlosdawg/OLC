@@ -39,7 +39,7 @@ const PILARES = [
 
 const NUMEROS = [
   { valor: '+15',  descricao: 'Anos de experiência jurídica' },
-  { valor: '+500', descricao: 'Clientes assessorados' },
+  { valor: '+60', descricao: 'Clientes assessorados' },
   { valor: '6',    descricao: 'Áreas de prática especializadas' },
   { valor: '100%', descricao: 'Compromisso ético e deontológico' },
 ];

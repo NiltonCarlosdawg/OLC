@@ -35,18 +35,12 @@ export function Header() {
         <div className="flex items-center justify-between h-20">
 
           {/* ── Logo OLC Advogados (IMAGEM) ───────────────────────── */}
-          <Link to="/" className="shrink-0 flex items-center gap-3" onClick={() => window.scrollTo(0, 0)}>
+          <Link to="/" className="shrink-0" onClick={() => window.scrollTo(0, 0)}>
             <img 
               src={logoSvg} 
               alt="OLC Advogados - Sociedade de Advogados, RL"
               className="h-14 w-auto object-contain"
             />
-            <span 
-              className="hidden lg:block text-xs tracking-widest uppercase font-light"
-              style={{ fontFamily: "'DM Mono', monospace", color: COLORS.navy }}
-            >
-              OLC Sociedade de Advogados
-            </span>
           </Link>
 
           {/* ── Navegação Desktop ────────────────────────────────── */}
