@@ -68,7 +68,7 @@ export default function Home() {
             alt=""
             aria-hidden="true"
             className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-            style={{ zIndex: 0, opacity: 0.55 }}
+            style={{ zIndex: 0, opacity: 0.75 }}
           />
 
           {/* Overlay: escurece bordas e fundo, preserva a zona central da imagem */}
