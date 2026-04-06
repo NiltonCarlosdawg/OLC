@@ -9,6 +9,9 @@ import auctionImg from '@/assets/auction.webp';
 import img1 from '@/assets/1.webp';
 import img2 from '@/assets/2.webp';
 import img3 from '@/assets/3.webp';
+import img5 from '@/assets/5.jpg';
+import img6 from '@/assets/6.jpg';
+import img7 from '@/assets/7.jpg';
 
 export const projects: Project[] = [
   {
@@ -19,26 +22,13 @@ export const projects: Project[] = [
     slug: 'direito-empresarial',
     badge: 'Área Principal',
     // M&A e contratos comerciais
-    coverImage: img1,
+    coverImage: img5,
     description:
       'Assessoria completa a empresas nacionais e internacionais. Contratos comerciais, fusões e aquisições, reestruturações e negociações estratégicas no mercado angolano.',
     stack:
       'Contratos Comerciais · Fusões e Aquisições · Reestruturações · Due Diligence · Negociações Estratégicas',
     location: 'Luanda, Angola',
-    images: [
-      {
-        id: '1-1',
-        src: img2,
-        alt: 'Direito Empresarial',
-        aspectRatio: 'landscape',
-      },
-      {
-        id: '1-2',
-        src: img3,
-        alt: 'Direito Empresarial',
-        aspectRatio: 'landscape',
-      },
-    ],
+    images: [],
   },
   {
     id: '2',
@@ -79,7 +69,7 @@ export const projects: Project[] = [
     slug: 'direito-societario',
     badge: 'Especialização',
     // Boardroom / corporate governance — órgãos de administração
-    coverImage: legalLibraryImg,
+    coverImage: img6,
     description:
       'Constituição de sociedades, pactos sociais, governação corporativa e assessoria a órgãos de administração. Expertise nos quadros regulatórios angolanos ao abrigo da Lei n.º 11/15.',
     stack:
@@ -141,7 +131,7 @@ export const projects: Project[] = [
     slug: 'direito-internacional',
     badge: 'Especialização',
     // Globe / international trade — operações transfronteiriças
-    coverImage: gavelImg,
+    coverImage: img7,
     description:
       'Apoio jurídico a investimento estrangeiro em Angola e a empresas angolanas em expansão regional na SADC. Estruturação de operações transfronteiriças e joint ventures internacionais.',
     stack:
