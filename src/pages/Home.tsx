@@ -62,6 +62,24 @@ export default function Home() {
         {/* HERO - fundo NAVY */}
         <section className="relative h-screen w-full overflow-hidden" style={{ background: COLORS.navy }}>
 
+          {/* Imagem de fundo */}
+          <img
+            src={fotoDestaque}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+            style={{ zIndex: 0, opacity: 0.25 }}
+          />
+
+          {/* Overlay gradiente para reforçar legibilidade */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: `linear-gradient(to bottom, ${COLORS.navy}55 0%, ${COLORS.navy}80 60%, ${COLORS.navy}cc 100%)`,
+              zIndex: 0,
+            }}
+          />
+
           {/* Glow dourado */}
           <div
             className="absolute top-0 right-0 w-[45vw] h-[45vw] pointer-events-none"
@@ -91,13 +109,13 @@ export default function Home() {
 
               {/* H1 */}
               <h1
-                 className="font-extralight tracking-widest text-white"
-  style={{ 
-    fontFamily: "'Cormorant Garamond', serif", 
-    fontSize: 'clamp(3.5rem, 9vw, 8rem)',
-    lineHeight: '1.2',  // ← Muda de "none" (que é ~1) para 1.2
-    marginBottom: '0.25rem'
-  }}
+                className="font-extralight tracking-widest text-white"
+                style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: 'clamp(3.5rem, 9vw, 8rem)',
+                  lineHeight: '1.2',
+                  marginBottom: '0.25rem',
+                }}
               >
                 <TextReveal text={FIRMA_NOME} delay={0.3} wordDelay={0.12} />
                 <br />
