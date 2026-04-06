@@ -1,6 +1,6 @@
 import type { Project } from '@/types';
 import courthouseImg from '@/assets/courthouse.webp';
-import justiceScalesImg from '@/assets/justice-scales.webp';
+import justiceScalesImg from '@/assets/contencioso e arbitrage m.jpg';
 import lawyerProfessionalImg from '@/assets/lawyer-professional.webp';
 import legalLibraryImg from '@/assets/legal-library.webp';
 import legalBooksImg from '@/assets/legal-books.webp';
