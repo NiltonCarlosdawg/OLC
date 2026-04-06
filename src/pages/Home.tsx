@@ -59,31 +59,34 @@ export default function Home() {
 
       <div className="min-h-screen" style={{ background: COLORS.white }}>
 
-        {/* HERO - fundo NAVY */}
+        {/* HERO */}
         <section className="relative h-screen w-full overflow-hidden" style={{ background: COLORS.navy }}>
 
-          {/* Imagem de fundo */}
+          {/* Imagem de fundo — opacidade elevada para o globo ser bem visível */}
           <img
             src={fotoDestaque}
             alt=""
             aria-hidden="true"
             className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-            style={{ zIndex: 0, opacity: 0.25 }}
+            style={{ zIndex: 0, opacity: 0.55 }}
           />
 
-          {/* Overlay gradiente para reforçar legibilidade */}
+          {/* Overlay: escurece bordas e fundo, preserva a zona central da imagem */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
-              background: `linear-gradient(to bottom, ${COLORS.navy}55 0%, ${COLORS.navy}80 60%, ${COLORS.navy}cc 100%)`,
-              zIndex: 0,
+              background: `
+                radial-gradient(ellipse 55% 60% at 50% 45%, transparent 0%, ${COLORS.navy}99 100%),
+                linear-gradient(to bottom, ${COLORS.navy}cc 0%, transparent 20%, transparent 65%, ${COLORS.navy}ee 100%)
+              `,
+              zIndex: 1,
             }}
           />
 
-          {/* Glow dourado */}
+          {/* Glow dourado canto superior direito */}
           <div
             className="absolute top-0 right-0 w-[45vw] h-[45vw] pointer-events-none"
-            style={{ background: `radial-gradient(ellipse at top right, ${COLORS.gold}12 0%, transparent 65%)`, zIndex: 1 }}
+            style={{ background: `radial-gradient(ellipse at top right, ${COLORS.gold}18 0%, transparent 65%)`, zIndex: 2 }}
           />
 
           {/* Linha editorial vertical */}
@@ -92,89 +95,72 @@ export default function Home() {
             style={{ background: `linear-gradient(to bottom, transparent, ${COLORS.gold}30, transparent)`, zIndex: 2 }}
           />
 
-          {/* Conteúdo central */}
-          <div className="relative h-full flex flex-col items-center justify-center px-6" style={{ zIndex: 3 }}>
-            <div className="text-center space-y-6 max-w-4xl">
 
-              {/* Eyebrow */}
-              <motion.p
-                className="font-mono text-[10px] tracking-[0.22em] uppercase"
-                style={{ color: COLORS.gold, fontFamily: "'DM Mono', monospace" }}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-              >
-                Direito Empresarial · Propriedade Intelectual · Luanda, Angola
-              </motion.p>
 
-              {/* H1 */}
-              <h1
-                className="font-extralight tracking-widest text-white"
-                style={{
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontSize: 'clamp(3.5rem, 9vw, 8rem)',
-                  lineHeight: '1.2',
-                  marginBottom: '0.25rem',
-                }}
-              >
-                <TextReveal text={FIRMA_NOME} delay={0.3} wordDelay={0.12} />
-                <br />
-                <TextReveal
-                  text={FIRMA_APELLIDO}
-                  delay={0.5}
-                  wordDelay={0.12}
-                  className="italic font-light"
-                  style={{ color: COLORS.gold }}
-                />
-              </h1>
+          {/* ── Eyebrow — subtítulo institucional ────────────────────── */}
+          <motion.p
+            className="absolute font-mono text-[10px] tracking-[0.22em] uppercase text-center w-full pointer-events-none"
+            style={{
+              color: COLORS.gold,
+              fontFamily: "'DM Mono', monospace",
+              top: '68%',
+              zIndex: 3,
+            }}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+          >
+            Direito Empresarial · Propriedade Intelectual · Luanda, Angola
+          </motion.p>
 
-              {/* Tagline */}
-              <motion.p
-                className="text-lg md:text-xl font-light tracking-wide text-white/75"
-                style={{ fontFamily: "'DM Sans', sans-serif", lineHeight: '1.8' }}
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
-              >
-                {FIRMA_TAGLINE}
-              </motion.p>
+          {/* ── Tagline posicionada logo abaixo da mão (~64-65% do topo) */}
+          <motion.p
+            className="absolute text-center px-6 w-full"
+            style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: 'clamp(1rem, 2vw, 1.3rem)',
+              fontWeight: 300,
+              lineHeight: 1.75,
+              color: 'rgba(255,255,255,0.92)',
+              letterSpacing: '0.02em',
+              top: '63%',
+              zIndex: 3,
+              textShadow: '0 1px 10px rgba(0,0,0,0.8)',
+            }}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          >
+            {FIRMA_TAGLINE}
+          </motion.p>
 
-              {/* CTAs */}
-              <motion.div
-                className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6"
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.2, ease: [0.22, 1, 0.36, 1] }}
-              >
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center gap-2 text-sm font-mono tracking-widest uppercase px-6 py-3 transition-all hover:opacity-90 group"
-                  style={{ background: COLORS.gold, color: COLORS.navy, fontFamily: "'DM Mono', monospace" }}
-                >
-                  Agendar Consulta
-                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-
-                <Link
-                  to="/about"
-                  className="inline-flex items-center gap-2 border border-white/40 text-white text-sm font-mono tracking-widest uppercase px-6 py-3 hover:border-white/80 transition-colors group"
-                  style={{ fontFamily: "'DM Mono', monospace" }}
-                >
-                  Conhecer a Firma
-                  <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </Link>
-              </motion.div>
-            </div>
-
-            <motion.div
-              className="absolute bottom-12"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.8, duration: 0.8 }}
+          {/* ── CTAs no fundo da secção ───────────────────────────── */}
+          <motion.div
+            className="absolute bottom-10 left-0 right-0 flex flex-col sm:flex-row items-center justify-center gap-4 px-6"
+            style={{ zIndex: 3 }}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 text-sm font-mono tracking-widest uppercase px-6 py-3 transition-all hover:opacity-90 group"
+              style={{ background: COLORS.gold, color: COLORS.navy, fontFamily: "'DM Mono', monospace" }}
             >
-              
-            </motion.div>
-          </div>
+              Agendar Consulta
+              <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+
+            <Link
+              to="/about"
+              className="inline-flex items-center gap-2 border border-white/40 text-white text-sm font-mono tracking-widest uppercase px-6 py-3 hover:border-white/80 transition-colors group"
+              style={{ fontFamily: "'DM Mono', monospace" }}
+            >
+              Conhecer a Firma
+              <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
+          </motion.div>
+
         </section>
 
         {/* ── Apresentação da Firma ─────────────────────────────────── */}
