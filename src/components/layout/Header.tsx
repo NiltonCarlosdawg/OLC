@@ -2,7 +2,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu } from 'lucide-react';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ThemeToggle } from './ThemeToggle';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
@@ -70,12 +69,10 @@ export function Header() {
                 </Link>
               );
             })}
-            <ThemeToggle />
           </nav>
 
           {/* ── Mobile ───────────────────────────────────────────── */}
           <div className="md:hidden flex items-center gap-2">
-            <ThemeToggle />
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="size-9" style={{ color: COLORS.navy }}>
