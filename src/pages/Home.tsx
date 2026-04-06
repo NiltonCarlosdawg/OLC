@@ -93,71 +93,83 @@ export default function Home() {
             style={{ background: `linear-gradient(to bottom, transparent, ${COLORS.gold}30, transparent)`, zIndex: 2 }}
           />
 
-          {/* ── Subtítulo institucional (eyebrow) ────────────────────── */}
-          <motion.p
-            className="absolute font-mono text-[10px] tracking-[0.22em] uppercase text-center w-full pointer-events-none px-4"
-            style={{
-              color: COLORS.gold,
-              fontFamily: "'DM Mono', monospace",
-              top: '62%',
-              zIndex: 3,
-            }}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.7 }}
-          >
-            Direito Empresarial · Propriedade Intelectual
-            <br className="block sm:hidden" />
-            · Luanda, Angola
-          </motion.p>
+          {/* Container flexível para o texto central */}
+          <div className="relative h-full flex flex-col items-center justify-center px-6 z-10">
+            
+            {/* Espaçador superior flexível */}
+            <div className="flex-1" />
 
-          {/* ── Tagline ─────────────────────────────────────────────── */}
-          <motion.p
-            className="absolute text-center px-6 w-full"
-            style={{
-              fontFamily: "'DM Sans', sans-serif",
-              fontSize: 'clamp(0.9rem, 4vw, 1.3rem)',
-              fontWeight: 300,
-              lineHeight: 1.75,
-              color: 'rgba(255,255,255,0.92)',
-              letterSpacing: '0.02em',
-              top: '56%',
-              zIndex: 3,
-              textShadow: '0 1px 10px rgba(0,0,0,0.8)',
-            }}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          >
-            {FIRMA_TAGLINE}
-          </motion.p>
-
-          {/* ── CTAs no fundo da secção ───────────────────────────── */}
-          <motion.div
-            className="absolute bottom-10 left-0 right-0 flex flex-col sm:flex-row items-center justify-center gap-4 px-6"
-            style={{ zIndex: 3 }}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 text-sm font-mono tracking-widest uppercase px-6 py-3 transition-all hover:opacity-90 group"
-              style={{ background: COLORS.gold, color: COLORS.navy, fontFamily: "'DM Mono', monospace" }}
+            {/* Subtítulo (eyebrow) */}
+            <motion.p
+              className="font-mono text-[10px] tracking-[0.22em] uppercase text-center"
+              style={{
+                color: COLORS.gold,
+                fontFamily: "'DM Mono', monospace",
+              }}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
             >
-              Agendar Consulta
-              <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-            </Link>
+              Direito Empresarial · Propriedade Intelectual
+              <br className="block sm:hidden" />
+              · Luanda, Angola
+            </motion.p>
 
-            <Link
-              to="/about"
-              className="inline-flex items-center gap-2 border border-white/40 text-white text-sm font-mono tracking-widest uppercase px-6 py-3 hover:border-white/80 transition-colors group"
-              style={{ fontFamily: "'DM Mono', monospace" }}
+            {/* Espaço entre subtítulo e tagline */}
+            <div className="h-4 sm:h-6" />
+
+            {/* Tagline */}
+            <motion.p
+              className="text-center max-w-[85%] sm:max-w-[70%] md:max-w-[50%]"
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: 'clamp(1rem, 4vw, 1.3rem)',
+                fontWeight: 300,
+                lineHeight: 1.6,
+                color: 'rgba(255,255,255,0.92)',
+                letterSpacing: '0.02em',
+                textShadow: '0 1px 10px rgba(0,0,0,0.8)',
+              }}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
             >
-              Conhecer a Firma
-              <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
-          </motion.div>
+              {FIRMA_TAGLINE}
+            </motion.p>
+
+            {/* Espaço entre tagline e CTAs */}
+            <div className="h-8 sm:h-12" />
+
+            {/* CTAs */}
+            <motion.div
+              className="flex flex-col sm:flex-row items-center justify-center gap-4"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.2, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 text-sm font-mono tracking-widest uppercase px-6 py-3 transition-all hover:opacity-90 group"
+                style={{ background: COLORS.gold, color: COLORS.navy, fontFamily: "'DM Mono', monospace" }}
+              >
+                Agendar Consulta
+                <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+
+              <Link
+                to="/about"
+                className="inline-flex items-center gap-2 border border-white/40 text-white text-sm font-mono tracking-widest uppercase px-6 py-3 hover:border-white/80 transition-colors group"
+                style={{ fontFamily: "'DM Mono', monospace" }}
+              >
+                Conhecer a Firma
+                <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Link>
+            </motion.div>
+
+            {/* Espaçador inferior flexível */}
+            <div className="flex-1" />
+
+          </div>
 
         </section>
 
