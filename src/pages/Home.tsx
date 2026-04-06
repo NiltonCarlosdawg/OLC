@@ -8,8 +8,6 @@ import { Link } from 'react-router-dom';
 import { COLORS } from '@/constants/colors';
 import fotoDestaque from '@/assets/4.png';
 
-
-
 // ── Conteúdo institucional ───────────────────────────────────────
 const FIRMA_NOME     = 'OLC';
 const FIRMA_APELLIDO = 'Advogados';
@@ -62,7 +60,7 @@ export default function Home() {
         {/* HERO */}
         <section className="relative h-screen w-full overflow-hidden" style={{ background: COLORS.navy }}>
 
-          {/* Imagem de fundo — opacidade elevada para o globo ser bem visível */}
+          {/* Imagem de fundo */}
           <img
             src={fotoDestaque}
             alt=""
@@ -71,7 +69,7 @@ export default function Home() {
             style={{ zIndex: 0, opacity: 0.75 }}
           />
 
-          {/* Overlay: escurece bordas e fundo, preserva a zona central da imagem */}
+          {/* Overlay */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
@@ -83,7 +81,7 @@ export default function Home() {
             }}
           />
 
-          {/* Glow dourado canto superior direito */}
+          {/* Glow dourado */}
           <div
             className="absolute top-0 right-0 w-[45vw] h-[45vw] pointer-events-none"
             style={{ background: `radial-gradient(ellipse at top right, ${COLORS.gold}18 0%, transparent 65%)`, zIndex: 2 }}
@@ -95,35 +93,35 @@ export default function Home() {
             style={{ background: `linear-gradient(to bottom, transparent, ${COLORS.gold}30, transparent)`, zIndex: 2 }}
           />
 
-
-
-          {/* ── Eyebrow — subtítulo institucional ────────────────────── */}
+          {/* ── Subtítulo institucional (eyebrow) ────────────────────── */}
           <motion.p
-            className="absolute font-mono text-[10px] tracking-[0.22em] uppercase text-center w-full pointer-events-none"
+            className="absolute font-mono text-[10px] tracking-[0.22em] uppercase text-center w-full pointer-events-none px-4"
             style={{
               color: COLORS.gold,
               fontFamily: "'DM Mono', monospace",
-              top: '68%',
+              top: '62%',
               zIndex: 3,
             }}
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.7 }}
           >
-            Direito Empresarial · Propriedade Intelectual · Luanda, Angola
+            Direito Empresarial · Propriedade Intelectual
+            <br className="block sm:hidden" />
+            · Luanda, Angola
           </motion.p>
 
-          {/* ── Tagline posicionada logo abaixo da mão (~64-65% do topo) */}
+          {/* ── Tagline ─────────────────────────────────────────────── */}
           <motion.p
             className="absolute text-center px-6 w-full"
             style={{
               fontFamily: "'DM Sans', sans-serif",
-              fontSize: 'clamp(1rem, 2vw, 1.3rem)',
+              fontSize: 'clamp(0.9rem, 4vw, 1.3rem)',
               fontWeight: 300,
               lineHeight: 1.75,
               color: 'rgba(255,255,255,0.92)',
               letterSpacing: '0.02em',
-              top: '63%',
+              top: '56%',
               zIndex: 3,
               textShadow: '0 1px 10px rgba(0,0,0,0.8)',
             }}
