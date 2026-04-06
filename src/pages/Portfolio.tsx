@@ -7,7 +7,6 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { COLORS } from '@/constants/colors';
 
-
 const INTRO = 'A nossa firma presta assessoria jurídica especializada em seis grandes domínios do Direito, ' +
   'assegurando aos clientes um serviço integrado, rigoroso e orientado para os resultados, ' +
   'em plena conformidade com o ordenamento jurídico angolano.';
@@ -17,7 +16,7 @@ export default function Portfolio() {
     <>
       <SEOHead
         title="Áreas de Prática | OLC Advogados"
-        description="Conheça as áreas de prática jurídica da OLO Advogados: Direito Empresarial, Propriedade Intelectual, Direito Societário, Contencioso e Arbitragem, Direito Internacional e Assessoria Estratégica. Luanda, Angola."
+        description="Conheça as áreas de prática jurídica da OLC Advogados: Direito Empresarial, Propriedade Intelectual, Direito Societário, Contencioso e Arbitragem, Direito Internacional e Assessoria Estratégica. Luanda, Angola."
       />
 
       {/* Linha dourada no topo */}
@@ -53,15 +52,26 @@ export default function Portfolio() {
               >
                 Direito Empresarial · Propriedade Intelectual · Angola
               </p>
+              
+              {/* ── Título "Áreas de Prática" - BRANCO em todos os dispositivos ── */}
               <h1
                 className="font-light tracking-wide mb-4"
-                style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(3rem, 7vw, 6rem)', color: COLORS.textLight }}
+                style={{ 
+                  fontFamily: "'Cormorant Garamond', serif", 
+                  fontSize: 'clamp(3rem, 7vw, 6rem)', 
+                  color: COLORS.white  // ← ALTERADO: de textLight para white
+                }}
               >
                 Áreas de Prática
               </h1>
+              
+              {/* ── Subtítulo - BRANCO em todos os dispositivos ── */}
               <p
                 className="text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto"
-                style={{ color: COLORS.textMutedLight, fontFamily: "'DM Sans', sans-serif" }}
+                style={{ 
+                  color: COLORS.white,  // ← ALTERADO: de textMutedLight para white
+                  fontFamily: "'DM Sans', sans-serif" 
+                }}
               >
                 Seis especialidades jurídicas para proteger e valorizar o seu negócio em Angola
               </p>
@@ -112,18 +122,31 @@ export default function Portfolio() {
               >
                 Próximos passos
               </p>
+              
+              {/* ── Título do CTA - GOLD em todos os dispositivos ── */}
               <h2
                 className="font-light tracking-wide"
-                style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(1.8rem, 4vw, 3rem)', color: COLORS.textLight }}
+                style={{ 
+                  fontFamily: "'Cormorant Garamond', serif", 
+                  fontSize: 'clamp(1.8rem, 4vw, 3rem)', 
+                  color: COLORS.gold  // ← ALTERADO: de textLight para gold
+                }}
               >
                 Precisa de assessoria jurídica especializada?
               </h2>
+              
+              {/* ── Descrição do CTA - GOLD mais suave ── */}
               <p
                 className="text-base font-light leading-relaxed max-w-xl mx-auto"
-                style={{ color: COLORS.textMutedLight, fontFamily: "'DM Sans', sans-serif", lineHeight: '1.8' }}
+                style={{ 
+                  color: `${COLORS.gold}cc`,  // ← ALTERADO: de textMutedLight para gold com opacidade
+                  fontFamily: "'DM Sans', sans-serif", 
+                  lineHeight: '1.8' 
+                }}
               >
                 Contacte a nossa firma para agendar uma consulta inicial com o advogado especializado na área jurídica do seu interesse.
               </p>
+              
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
                 <Link
                   to="/contact"
