@@ -12,12 +12,12 @@ const navLinks = [
 ];
 
 const areasLinks = [
-  { name: 'Direito Empresarial',       path: '/portfolio' },
-  { name: 'Propriedade Intelectual',   path: '/portfolio' },
-  { name: 'Direito Societário',        path: '/portfolio' },
-  { name: 'Contencioso e Arbitragem',  path: '/portfolio' },
-  { name: 'Direito Internacional',     path: '/portfolio' },
-  { name: 'Assessoria Estratégica',    path: '/portfolio' },
+  { name: 'Direito Empresarial',       path: '/project/direito-empresarial' },
+  { name: 'Propriedade Intelectual',   path: '/project/propriedade-intelectual' },
+  { name: 'Direito Societário',        path: '/project/direito-societario' },
+  { name: 'Contencioso e Arbitragem',  path: '/project/contencioso-arbitragem' },
+  { name: 'Direito Internacional',     path: '/project/direito-internacional' },
+  { name: 'Assessoria Estratégica',    path: '/project/assessoria-estrategica' },
 ];
 
 export function Footer() {
