@@ -12,6 +12,7 @@ import logoSvg from '@/assets/logo.png';
 const navLinks = [
   { name: 'Início',          path: '/'         },
   { name: 'Áreas de Prática',path: '/portfolio' },
+  { name: "Artigos",         path:'/artigos'    },
   { name: 'A Firma',         path: '/about'     },
   { name: 'Contacto',        path: '/contact'   },
 ];

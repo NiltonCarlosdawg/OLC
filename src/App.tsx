@@ -9,6 +9,7 @@ import { SkipToContent } from "@/components/ui/SkipToContent";
 import { LoadingFallback } from "@/components/ui/LoadingFallback";
 import { PageTransition } from "@/components/ui/PageTransition";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
+import Artigos from '@/pages/Artigos';
 import { CustomCursor } from "@/components/ui/CustomCursor";
 import { AnimatePresence } from "framer-motion";
 import { lazy, Suspense } from "react";
@@ -33,6 +34,7 @@ function AnimatedRoutes() {
         <Route path="/project/:slug" element={<PageTransition><ProjectDetail /></PageTransition>} />
         <Route path="/about" element={<PageTransition><About /></PageTransition>} />
         <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+        <Route path="/artigos" element={<Artigos />} /> 
         <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
       </Routes>
     </AnimatePresence>
