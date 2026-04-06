@@ -287,7 +287,7 @@ export default function Home() {
                 <Link to={`/project/${featuredProject.slug}`} className="group block">
                   <div className="relative overflow-hidden aspect-video mb-6" style={{ background: COLORS.border }}>
                     <img
-                      src={fotoDestaque}
+                      src={featuredProject.coverImage}
                       alt={featuredProject.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
