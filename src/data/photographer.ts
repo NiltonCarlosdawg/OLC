@@ -92,5 +92,5 @@ Seja em operações de M&A, protecção de activos intelectuais ou litígios com
     github: undefined,
     linkedin: undefined,
   },
-  portraitImage: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?crop=entropy&cs=tinysrgb&fit=crop&h=800&w=600',
+  portraitImage: '',
 };

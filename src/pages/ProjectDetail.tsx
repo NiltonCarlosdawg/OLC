@@ -29,6 +29,9 @@ export default function ProjectDetail() {
     setLightboxOpen(true);
   };
 
+  // Verifica se existem imagens na galeria
+  const hasImages = project.images && project.images.length > 0;
+
   return (
     <>
       <SEOHead
@@ -160,30 +163,34 @@ export default function ProjectDetail() {
           </motion.div>
         </section>
 
-        {/* Galeria */}
-        <section className="py-12 md:py-16">
-          <div className="space-y-8 md:space-y-12">
-            {project.images.map((image, index) => (
-              <ScrollReveal key={image.id} delay={index * 0.1}>
-                <ImageWithLightbox
-                  image={image}
-                  onClick={() => openLightbox(index)}
-                  priority={index === 0}
-                  index={0}
-                  className="w-full"
-                />
-              </ScrollReveal>
-            ))}
-          </div>
-        </section>
+        {/* ── Galeria - Só mostra se existirem imagens ── */}
+        {hasImages && (
+          <>
+            <section className="py-12 md:py-16">
+              <div className="space-y-8 md:space-y-12">
+                {project.images.map((image, index) => (
+                  <ScrollReveal key={image.id} delay={index * 0.1}>
+                    <ImageWithLightbox
+                      image={image}
+                      onClick={() => openLightbox(index)}
+                      priority={index === 0}
+                      index={0}
+                      className="w-full"
+                    />
+                  </ScrollReveal>
+                ))}
+              </div>
+            </section>
 
-        <Lightbox
-          images={project.images}
-          currentIndex={currentImageIndex}
-          isOpen={lightboxOpen}
-          onClose={() => setLightboxOpen(false)}
-          onNavigate={setCurrentImageIndex}
-        />
+            <Lightbox
+              images={project.images}
+              currentIndex={currentImageIndex}
+              isOpen={lightboxOpen}
+              onClose={() => setLightboxOpen(false)}
+              onNavigate={setCurrentImageIndex}
+            />
+          </>
+        )}
       </div>
     </>
   );

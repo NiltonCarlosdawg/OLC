@@ -28,7 +28,9 @@ export const projects: Project[] = [
     stack:
       'Contratos Comerciais · Fusões e Aquisições · Reestruturações · Due Diligence · Negociações Estratégicas',
     location: 'Luanda, Angola',
-    images: [],
+    images: [
+      
+    ],
   },
   {
     id: '2',
@@ -44,22 +46,7 @@ export const projects: Project[] = [
     stack:
       'Registo de Marcas · Patentes · Direitos de Autor · Combate à Contrafacção · Licenciamento',
     location: 'Luanda, Angola',
-    images: [
-      {
-        id: '2-1',
-        // Creative/IP concept — protecção de propriedade intelectual
-        src: 'https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200',
-        alt: 'Protecção de propriedade intelectual',
-        aspectRatio: 'landscape',
-      },
-      {
-        id: '2-2',
-        // Patent document / stamp — registo de patentes
-        src: 'https://images.unsplash.com/photo-1532356884227-66d7c0e9e4c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200',
-        alt: 'Registo de marcas e patentes — IAPI',
-        aspectRatio: 'landscape',
-      },
-    ],
+    images: [],
   },
   {
     id: '3',
@@ -75,22 +62,7 @@ export const projects: Project[] = [
     stack:
       'Constituição de Sociedades · Pactos Sociais · Governação Corporativa · Compliance · Dissolução',
     location: 'Luanda, Angola',
-    images: [
-      {
-        id: '3-1',
-        // Corporate boardroom meeting — conselho de administração
-        src: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200',
-        alt: 'Governação corporativa — conselho de administração',
-        aspectRatio: 'landscape',
-      },
-      {
-        id: '3-2',
-        // Corporate documents — pactos sociais e estatutos
-        src: 'https://images.unsplash.com/photo-1568992687947-868a62a9f521?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200',
-        alt: 'Pactos sociais e documentação societária',
-        aspectRatio: 'landscape',
-      },
-    ],
+    images: [],
   },
   {
     id: '4',
@@ -106,22 +78,7 @@ export const projects: Project[] = [
     stack:
       'Litígios Comerciais · Arbitragem Nacional · Arbitragem Internacional · Mediação · Execução de Sentenças',
     location: 'Luanda, Angola',
-    images: [
-      {
-        id: '4-1',
-        // Lady Justice / scales — tribunal e justiça
-        src: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200',
-        alt: 'Tribunal — contencioso e arbitragem comercial',
-        aspectRatio: 'landscape',
-      },
-      {
-        id: '4-2',
-        // Law books / gavel — processo judicial
-        src: 'https://images.unsplash.com/photo-1575505586569-646b2ca898fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200',
-        alt: 'Processo de arbitragem internacional',
-        aspectRatio: 'landscape',
-      },
-    ],
+    images: [],
   },
   {
     id: '5',
@@ -137,22 +94,7 @@ export const projects: Project[] = [
     stack:
       'Investimento Estrangeiro · Contratos Internacionais · Joint Ventures · Expansão Regional SADC',
     location: 'Luanda, Angola',
-    images: [
-      {
-        id: '5-1',
-        // International business / handshake across borders
-        src: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200',
-        alt: 'Investimento estrangeiro — operações internacionais',
-        aspectRatio: 'landscape',
-      },
-      {
-        id: '5-2',
-        // World map / flags — expansão regional SADC
-        src: 'https://images.unsplash.com/photo-1434626881859-194d67b2b86f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200',
-        alt: 'Expansão regional SADC — direito internacional',
-        aspectRatio: 'landscape',
-      },
-    ],
+    images: [],
   },
   {
     id: '6',
@@ -168,22 +110,7 @@ export const projects: Project[] = [
     stack:
       'Retainer Jurídico · Análise de Riscos · Pareceres Jurídicos · Formação Legal · Compliance',
     location: 'Luanda, Angola',
-    images: [
-      {
-        id: '6-1',
-        // Executive strategy meeting — assessoria a direcção
-        src: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200',
-        alt: 'Assessoria estratégica — reunião executiva',
-        aspectRatio: 'landscape',
-      },
-      {
-        id: '6-2',
-        // Legal analysis / lawyer at desk — pareceres jurídicos
-        src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200',
-        alt: 'Pareceres jurídicos — análise de riscos legais',
-        aspectRatio: 'landscape',
-      },
-    ],
+    images: [],
   },
 ];
 
